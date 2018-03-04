@@ -1,0 +1,600 @@
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+*:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+img,
+embed,
+object,
+audio,
+video {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+html {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  overflow-y: auto;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #FFFFFF;
+  font-family: Maitree-Medium;
+  font-size: 16px;
+  color: #111111;
+  line-height: 1.3;
+  letter-spacing: initial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+a {
+  color: #FF0000;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #111111;
+}
+
+address {
+  font-style: normal;
+}
+
+button:focus {
+  outline: none;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input {
+  outline: none;
+}
+
+picture {
+  display: inline-block;
+}
+
+picture,
+img {
+  vertical-align: middle;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid #999999;
+}
+
+[role='button'] {
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+@font-face {
+  font-family: Maitree-Medium;
+  src: url("../fonts/maitree/maitree-medium.eot");
+  src: url("../fonts/maitree/maitree-medium.eot") format("embedded-opentype"), url("../fonts/maitree/maitree-medium.woff") format("woff"), url("../fonts/maitree/maitree-medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Maitree-Bold;
+  src: url("../fonts/maitree/maitree-bold.eot");
+  src: url("../fonts/maitree/maitree-bold.eot") format("embedded-opentype"), url("../fonts/maitree/maitree-bold.woff") format("woff"), url("../fonts/maitree/maitree-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text-primary-body-xs {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-body, xs);
+  font-weight: normal;
+  line-height: getLineHeight(primary-body);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-body);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-body-xs:hover, .text-primary-body-xs:focus {
+  text-decoration: none;
+}
+
+.text-primary-body-sm {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-body, sm);
+  font-weight: normal;
+  line-height: getLineHeight(primary-body);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-body);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-body-sm:hover, .text-primary-body-sm:focus {
+  text-decoration: none;
+}
+
+.text-primary-body-md {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-body, md);
+  font-weight: normal;
+  line-height: getLineHeight(primary-body);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-body);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-body-md:hover, .text-primary-body-md:focus {
+  text-decoration: none;
+}
+
+.text-primary-body-lg {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-body, lg);
+  font-weight: normal;
+  line-height: getLineHeight(primary-body);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-body);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-body-lg:hover, .text-primary-body-lg:focus {
+  text-decoration: none;
+}
+
+.text-primary-body-xl {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-body, xl);
+  font-weight: normal;
+  line-height: getLineHeight(primary-body);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-body);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-body-xl:hover, .text-primary-body-xl:focus {
+  text-decoration: none;
+}
+
+.text-primary-heading-xs {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-heading, xs);
+  font-weight: normal;
+  line-height: getLineHeight(primary-heading);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-heading);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-heading-xs:hover, .text-primary-heading-xs:focus {
+  text-decoration: none;
+}
+
+.text-primary-heading-sm {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-heading, sm);
+  font-weight: normal;
+  line-height: getLineHeight(primary-heading);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-heading);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-heading-sm:hover, .text-primary-heading-sm:focus {
+  text-decoration: none;
+}
+
+.text-primary-heading-md {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-heading, md);
+  font-weight: normal;
+  line-height: getLineHeight(primary-heading);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-heading);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-heading-md:hover, .text-primary-heading-md:focus {
+  text-decoration: none;
+}
+
+.text-primary-heading-lg {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-heading, lg);
+  font-weight: normal;
+  line-height: getLineHeight(primary-heading);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-heading);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-heading-lg:hover, .text-primary-heading-lg:focus {
+  text-decoration: none;
+}
+
+.text-primary-heading-xl {
+  display: inline-block;
+  font-family: getFontFamily(primary, medium);
+  font-size: getFontSize(primary-heading, xl);
+  font-weight: normal;
+  line-height: getLineHeight(primary-heading);
+  letter-spacing: normal;
+  color: getLetterSpacing(primary-heading);
+  vertical-align: middle;
+  text-transform: none;
+}
+
+.text-primary-heading-xl:hover, .text-primary-heading-xl:focus {
+  text-decoration: none;
+}
+
+.text-primary.is-bold {
+  font-family: getFontFamily(primary, bold);
+}
+
+.is-ellipsis {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.is-word-break-all {
+  word-break: break-all;
+}
+
+.is-word-break-word {
+  word-break: break-word;
+}
+
+/*
+<button class="button" type="button">
+  <span class="button-body">
+    <span class="button-icon">...</span>
+    <img class="button-icon" src="..." alt="Icon">
+    <span class="button-text">...</span>
+  </span>
+</button>
+
+<a class="button" href="#">
+  <span class="button-body">
+    <span class="button-icon">...</span>
+    <img class="button-icon" src="..." alt="Icon">
+    <span class="button-text">...</span>
+  </span>
+</a>
+*/
+.button {
+  display: inline-block;
+  min-width: 150px;
+  height: 36px;
+  padding: 0 10px;
+  background-color: #333333;
+  border-style: solid;
+  border-width: 0;
+  border-color: transparent;
+  border-radius: 3px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 transparent;
+  cursor: pointer;
+}
+
+.button .button-body {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.button .button-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button .button-icon.is-text-left {
+  margin-left: 10px;
+}
+
+.button .button-icon.is-text-right {
+  margin-right: 10px;
+}
+
+.button .button-text {
+  display: inline-block;
+  font-family: Maitree-Medium;
+  font-size: 14px;
+  line-height: 1;
+  color: #FFFFFF;
+  vertical-align: middle;
+}
+
+.button .button-text.is-size-md {
+  font-size: 16px;
+}
+
+.button .button-text.is-size-xl {
+  font-size: 20px;
+}
+
+.button .button-text.is-uppercase {
+  text-transform: uppercase;
+}
+
+.button .button-text.is-bold {
+  font-family: Maitree-Bold;
+}
+
+.button:hover {
+  background-color: #666666;
+  border-width: 0;
+  border-color: transparent;
+  text-decoration: none;
+}
+
+.button:hover .button-text {
+  color: #FFFFFF;
+}
+
+.button:active, .button:focus {
+  box-shadow: 0 0 0 transparent;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button.is-primary {
+  background-color: #FF5684;
+}
+
+.button.is-secondary {
+  background-color: #08AAF1;
+}
+
+.button.is-padding-blank {
+  padding: 0;
+}
+
+.button.is-fluid {
+  width: 100%;
+}
+
+.button-typography {
+  display: inline-block;
+  min-width: auto;
+  height: auto;
+  padding: 0;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  border-color: transparent;
+  border-radius: initial;
+  vertical-align: middle;
+  box-shadow: 0 0 0 transparent;
+  cursor: pointer;
+}
+
+.button-typography .button-body {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.button-typography .button-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button-typography .button-icon.is-text-left {
+  margin-left: 0;
+}
+
+.button-typography .button-icon.is-text-right {
+  margin-right: 0;
+}
+
+.button-typography .button-text {
+  display: inline-block;
+  font-family: Maitree-Medium;
+  font-size: 14px;
+  line-height: 1;
+  color: #111111;
+  vertical-align: middle;
+}
+
+.button-typography .button-text.is-size-md {
+  font-size: 16px;
+}
+
+.button-typography .button-text.is-size-xl {
+  font-size: 20px;
+}
+
+.button-typography .button-text.is-uppercase {
+  text-transform: uppercase;
+}
+
+.button-typography .button-text.is-bold {
+  font-family: Maitree-Bold;
+}
+
+.button-typography:hover {
+  background-color: transparent;
+  border-width: 0;
+  border-color: initial;
+  text-decoration: none;
+}
+
+.button-typography:hover .button-text {
+  color: #111111;
+}
+
+.button-typography:active, .button-typography:focus {
+  box-shadow: 0 0 0 transparent;
+}
+
+.button-typography:focus {
+  outline: none;
+}
+
+.button-typography.is-primary {
+  background-color: #FF5684;
+}
+
+.button-typography.is-secondary {
+  background-color: #08AAF1;
+}
+
+.button-typography.is-padding-blank {
+  padding: 0;
+}
+
+.button-typography.is-fluid {
+  width: 100%;
+}

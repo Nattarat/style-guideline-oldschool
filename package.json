@@ -1,0 +1,24 @@
+{
+  "name": "project_name",
+  "version": "0.0.1",
+  "description": "project_description",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"npm run sass\" \"npm run watch\" \"npm run serve\"",
+    "sass": "node-sass --include-path scss assets/sass/main.scss assets/css/main.css --indent-width 4 --output-style expanded --indent-type space",
+    "sass-watch": "npm run sass -- --watch",
+    "watch": "npm run --watch",
+    "serve": "lite-server"
+  },
+  "author": "project_author",
+  "license": "ISC",
+  "dependencies": {
+    "is_js": "^0.9.0",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.5.3"
+  }
+}

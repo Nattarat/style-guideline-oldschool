@@ -1,0 +1,285 @@
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// ==================================================================================================
+//
+// Buttons
+// * HTML Structure
+// * Mixins
+// * Contextual variations
+//   - Default
+//   - Typography
+//
+// ==================================================================================================
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+
+@charset 'utf-8';
+
+// HTML Structure
+// ============================================================
+/*
+<button class="button" type="button">
+  <span class="button-body">
+    <span class="button-icon">...</span>
+    <img class="button-icon" src="..." alt="Icon">
+    <span class="button-text">...</span>
+  </span>
+</button>
+
+<a class="button" href="#">
+  <span class="button-body">
+    <span class="button-icon">...</span>
+    <img class="button-icon" src="..." alt="Icon">
+    <span class="button-text">...</span>
+  </span>
+</a>
+*/
+
+// Mixins
+// ============================================================
+@mixin button-variant(
+  // Body
+  $button-width: $button-width-default,
+  $button-height: $button-height-default,
+  $button-padding: 0 10px,
+  $button-background-color: $color-gray-3,
+  $button-border-width: 0,
+  $button-border-color: transparent,
+  $button-border-radius: $border-radiuse-xs,
+  $button-box-shadow: 0 0 0 rgba(0, 0, 0, 0),
+
+  // Body hover
+  $button-background-color-hover: $color-gray-2,
+  $button-border-width-hover: 0,
+  $button-border-color-hover: transparent,
+
+  // Text
+  $button-text-font-family: $font-family-primary-medium,
+  $button-text-font-size: $font-size-primary-body-sm,
+  $button-text-color: $color-white-1,
+
+  // Text hover
+  $button-text-color-hover: $color-white-1,
+
+  // Button icon
+  $button-icon-spacing-right: 10px,
+  $button-icon-spacing-left: 10px
+) {
+  // Mixins
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Helpers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Parent styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  display: inline-block;
+  min-width: $button-width;
+  height: $button-height;
+  padding: $button-padding;
+  background-color: $button-background-color;
+  border-style: solid;
+  border-width: $button-border-width;
+  border-color: $button-border-color;
+  border-radius: $button-border-radius;
+  vertical-align: middle;
+  box-shadow: $button-box-shadow;
+  cursor: pointer;
+
+  // Child element styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  .button-body {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .button-icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    &.is-text-left {
+      margin-left: $button-icon-spacing-left;
+    }
+
+    &.is-text-right {
+      margin-right: $button-icon-spacing-right;
+    }
+  }
+
+  .button-text {
+    display: inline-block;
+    font-family: $button-text-font-family;
+    font-size: $button-text-font-size;
+    line-height: 1;
+    color: $button-text-color;
+    vertical-align: middle;
+
+    &.is-size-md {
+      font-size: $font-size-primary-body-md;
+    }
+
+    &.is-size-xl {
+      font-size: $font-size-primary-body-xl;
+    }
+
+    &.is-uppercase {
+      text-transform: uppercase;
+    }
+
+    &.is-bold {
+      font-family: $font-family-primary-bold;
+    }
+  }
+
+  // States
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  &:hover {
+      background-color: $button-background-color-hover;
+      border-width: $button-border-width-hover;
+      border-color: $button-border-color-hover;
+      text-decoration: none;
+
+      .button-text {
+          color: $button-text-color-hover;
+      }
+  }
+
+  &:active,
+  &:focus {
+      box-shadow: $button-box-shadow;
+  }
+
+  &:focus {
+      outline: none;
+  }
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  &.is-primary {
+      background-color: $color-pink-1;
+  }
+
+  &.is-secondary {
+      background-color: $color-blue-1;
+  }
+
+  &.is-padding-blank {
+      padding: 0;
+  }
+
+  &.is-fluid {
+      width: 100%;
+  }
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+}
+
+// Browser variations
+// >>>>>>>>>>>>>>>>>>>>>>>
+// IE
+// Safari
+// Firefox
+
+// Contextual variations
+// ============================================================
+
+// Default
+// ------------------------------------------------
+.button {
+  // Mixins
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  @include button-variant();
+
+  // Helpers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Parent styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Child element styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Media queries
+  // >>>>>>>>>>>>>>>>>>>>>>>
+}
+
+// Browser variations
+// >>>>>>>>>>>>>>>>>>>>>>>
+// IE
+// Safari
+// Firefox
+
+// Typography
+// ------------------------------------------------
+.button-typography {
+  // Mixins
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  @include button-variant(
+    // Body
+    $button-width: auto,
+    $button-height: auto,
+    $button-padding: 0,
+    $button-background-color: transparent,
+    $button-border-width: 0,
+    $button-border-color: transparent,
+    $button-border-radius: initial,
+    $button-box-shadow: 0 0 0 rgba(0, 0, 0, 0),
+
+    // Body hover
+    $button-background-color-hover: transparent,
+    $button-border-width-hover: 0,
+    $button-border-color-hover: initial,
+
+    // Text
+    $button-text-font-family: $font-family-primary-medium,
+    $button-text-font-size: $font-size-primary-body-sm,
+    $button-text-color: $color-gray-4,
+
+    // Text hover
+    $button-text-color-hover: $color-gray-4,
+
+    // Button icon
+    $button-icon-spacing-right: 0,
+    $button-icon-spacing-left: 0
+  );
+
+  // Helpers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Parent styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Child element styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Media queries
+  // >>>>>>>>>>>>>>>>>>>>>>>
+}
+
+// Browser variations
+// >>>>>>>>>>>>>>>>>>>>>>>
+// IE
+// Safari
+// Firefox

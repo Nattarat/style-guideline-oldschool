@@ -1,0 +1,168 @@
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// ==================================================================================================
+//
+// Variables
+// * Path files
+// * Colors
+// * Font families
+// * Z indexs
+// * Screens (Physical width of device)
+// * Animation timings
+// * Border radiuses
+// * Box shadows
+// * Component widths
+// * Component heights
+//
+// ==================================================================================================
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Path files
+// ============================================================
+$path-file-images: '../images' !default;
+$path-file-fonts: '../fonts' !default;
+$path-file-contents: '../images/contents' !default;
+$path-file-icons: '../images/icons' !default;
+$path-file-logos: '../images/logos' !default;
+
+// Colors
+// ============================================================
+$color-white-1: #FFFFFF !default;
+$color-gray-1: #999999 !default;
+$color-gray-2: #666666 !default;
+$color-gray-3: #333333 !default;
+$color-gray-4: #111111 !default;
+$color-red-1: #FF0000 !default;
+$color-pink-1: #FF5684 !default;
+$color-blue-1: #08AAF1 !default;
+
+// Font families
+// ============================================================
+$font-family-primary-medium: Maitree-Medium !default;
+$font-family-primary-bold: Maitree-Bold !default;
+
+// Font sizes
+// ============================================================
+// Primary body
+$font-size-primary-body-xs: 12px !default;
+$font-size-primary-body-sm: 14px !default;
+$font-size-primary-body-md: 16px !default;
+$font-size-primary-body-lg: 18px !default;
+$font-size-primary-body-xl: 20px !default;
+
+// Primary heading
+$font-size-primary-heading-xs: 24px !default;
+$font-size-primary-heading-sm: 28px !default;
+$font-size-primary-heading-md: 32px !default;
+$font-size-primary-heading-lg: 36px !default;
+$font-size-primary-heading-xl: 48px !default;
+
+// Line heights
+// ============================================================
+$line-height-primary-body: 1.3 !default;
+$line-height-primary-heading: 1.6 !default;
+
+// Letter spacings
+// ============================================================
+$letter-spacing-primary-body: initial !default;
+$letter-spacing-primary-heading: initial !default;
+
+// Text styles
+// your stylesheets. Example: @extend $text-style-primary-body-xs;
+// ============================================================
+// Primary body
+$text-style-primary-body-xs: '.text-primary-body-xs' !default;
+$text-style-primary-body-sm: '.text-primary-body-sm' !default;
+$text-style-primary-body-md: '.text-primary-body-md' !default;
+$text-style-primary-body-lg: '.text-primary-body-lg' !default;
+$text-style-primary-body-xl: '.text-primary-body-xl' !default;
+
+// Primary Heading
+$text-style-primary-heading-xs: '.text-primary-heading-xs' !default;
+$text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
+$text-style-primary-heading-md: '.text-primary-heading-md' !default;
+$text-style-primary-heading-lg: '.text-primary-heading-lg' !default;
+$text-style-primary-heading-xl: '.text-primary-heading-xl' !default;
+
+// Z indexs
+// ============================================================
+$z-index-1: 1 !default;
+$z-index-2: 9 !default;
+$z-index-3: 99 !default;
+$z-index-4: 999 !default;
+$z-index-5: 9999 !default;
+
+// Screens (Physical width of device)
+// ============================================================
+// Mobile
+$screen-mobile-xs: 320px !default;
+$screen-mobile-sm: 360px !default;
+$screen-mobile-md: 375px !default;
+$screen-mobile-lg: 414px !default;
+
+// Phablet
+$screen-phablet-xs: 480px !default;
+$screen-phablet-sm: 640px !default;
+$screen-phablet-md: 667px !default;
+$screen-phablet-lg: 736px !default;
+
+// Tablet
+$screen-tablet-xs: 768px !default;
+$screen-tablet-sm: 800px !default;
+$screen-tablet-md: 812px !default;
+$screen-tablet-lg: 1024px !default;
+
+// Desktop
+$screen-desktop-xs: 1280px !default;
+$screen-desktop-sm: 1366px !default;
+$screen-desktop-md: 1440px !default;
+$screen-desktop-lg: 1600px !default;
+$screen-desktop-xl: 1920px !default;
+$screen-desktop-xxl: 2560px !default;
+
+// Mobile max
+$screen-mobile-xs-max: ($screen-mobile-sm - 1px) !default;
+$screen-mobile-sm-max: ($screen-mobile-md - 1px) !default;
+$screen-mobile-md-max: ($screen-mobile-lg - 1px) !default;
+$screen-mobile-lg-max: ($screen-phablet-xs - 1px) !default;
+
+// Phablet max
+$screen-phablet-xs-max: ($screen-phablet-sm - 1px) !default;
+$screen-phablet-sm-max: ($screen-phablet-md - 1px) !default;
+$screen-phablet-md-max: ($screen-phablet-lg - 1px) !default;
+$screen-phablet-lg-max: ($screen-tablet-xs - 1px) !default;
+
+// Tablet max
+$screen-tablet-xs-max: ($screen-tablet-sm - 1px) !default;
+$screen-tablet-sm-max: ($screen-tablet-md - 1px) !default;
+$screen-tablet-md-max: ($screen-tablet-lg - 1px) !default;
+$screen-tablet-lg-max: ($screen-desktop-xs - 1px) !default;
+
+// Desktop max
+$screen-desktop-xs-max: ($screen-desktop-sm - 1px) !default;
+$screen-desktop-sm-max: ($screen-desktop-md - 1px) !default;
+$screen-desktop-md-max: ($screen-desktop-lg - 1px) !default;
+$screen-desktop-lg-max: ($screen-desktop-xl - 1px) !default;
+$screen-desktop-xl-max: ($screen-desktop-xxl - 1px) !default;
+
+// Animation timings
+// ============================================================
+$animation-timing-elastic: cubic-bezier(.835, -.005, .06, 1) !default;
+
+// Border radiuses
+// ============================================================
+$border-radiuse-xs: 3px !default;
+$border-radiuse-sm: 5px !default;
+
+// Box shadows
+// ============================================================
+$box-shadow-1: 0 5px 5px rgba(0, 0, 0, 0.5) !default;
+
+// Component widths
+// ============================================================
+$field-width-default: 250px !default;
+$button-width-default: 150px !default;
+
+// Component heights
+// ============================================================
+$field-height-default: 36px !default;
+$button-height-default: 36px !default;

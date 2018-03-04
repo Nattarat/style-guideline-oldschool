@@ -1,0 +1,266 @@
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// ==================================================================================================
+//
+// Typography
+// * Embed font
+// * Mixins
+// * Calibration
+//
+// ==================================================================================================
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+
+@charset 'utf-8';
+
+// Embed font
+// ============================================================
+
+// Maitree
+// ------------------------------------------------
+
+// Medium
+@font-face {
+    font-family: Maitree-Medium;
+    src: url('#{$path-file-fonts}/maitree/maitree-medium.eot');
+    src: url('#{$path-file-fonts}/maitree/maitree-medium.eot') format('embedded-opentype'),
+        url('#{$path-file-fonts}/maitree/maitree-medium.woff') format('woff'),
+        url('#{$path-file-fonts}/maitree/maitree-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Bold
+@font-face {
+    font-family: Maitree-Bold;
+    src: url('#{$path-file-fonts}/maitree/maitree-bold.eot');
+    src: url('#{$path-file-fonts}/maitree/maitree-bold.eot') format('embedded-opentype'),
+        url('#{$path-file-fonts}/maitree/maitree-bold.woff') format('woff'),
+        url('#{$path-file-fonts}/maitree/maitree-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Mixins
+// ============================================================
+@mixin text-variant(
+    $text-display: inline-block,
+    $text-font-family: initial,
+    $text-font-size: initial,
+    $text-line-height: initial,
+    $text-color: initial
+) {
+    // MIXINS
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // STYLES OF COMPONENT ITSELF
+    // >>>>>>>>>>>>>>>>>>>>>>>
+    display: $text-display;
+    font-family: $text-font-family;
+    font-size: $text-font-size;
+    font-weight: normal;
+    line-height: $text-line-height;
+    letter-spacing: normal;
+    color: $text-color;
+    vertical-align: middle;
+    text-transform: none;
+
+    // STYLES OF CHILD CLASS
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // STYLES OF STATE
+    // >>>>>>>>>>>>>>>>>>>>>>>
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    // STYLES OF MODIFIER CLASS
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // STYLES OF STATE WITH MODIFIER CLASS
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // MEDIA QUERY
+    // >>>>>>>>>>>>>>>>>>>>>>>
+}
+
+// Browser variations
+// >>>>>>>>>>>>>>>>>>>>>>>
+// IE
+// Safari
+// Firefox
+
+// Contextual variations
+// ============================================================
+
+// Primary
+// ------------------------------------------------
+.text-primary {
+    // Body
+    &-body {
+        // Extra small
+        // Class name: .text-primary-body-xs
+        &-xs {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-body, xs),
+                $text-line-height: getLineHeight(primary-body),
+                $text-color: getLetterSpacing(primary-body)
+            );
+        }
+
+        // Small
+        // Class name: .text-primary-body-sm
+        &-sm {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-body, sm),
+                $text-line-height: getLineHeight(primary-body),
+                $text-color: getLetterSpacing(primary-body)
+            );
+        }
+
+        // Medium
+        // Class name: .text-primary-body-md
+        &-md {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-body, md),
+                $text-line-height: getLineHeight(primary-body),
+                $text-color: getLetterSpacing(primary-body)
+            );
+        }
+
+        // Large
+        // Class name: .text-primary-body-lg
+        &-lg {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-body, lg),
+                $text-line-height: getLineHeight(primary-body),
+                $text-color: getLetterSpacing(primary-body)
+            );
+        }
+
+        // Extra large
+        // Class name: .text-primary-body-xl
+        &-xl {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-body, xl),
+                $text-line-height: getLineHeight(primary-body),
+                $text-color: getLetterSpacing(primary-body)
+            );
+        }
+    }
+
+    // Heading
+    &-heading {
+        // Extra small
+        // Class name: .text-primary-heading-xs
+        &-xs {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-heading, xs),
+                $text-line-height: getLineHeight(primary-heading),
+                $text-color: getLetterSpacing(primary-heading)
+            );
+        }
+
+        // Small
+        // Class name: .text-primary-heading-sm
+        &-sm {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-heading, sm),
+                $text-line-height: getLineHeight(primary-heading),
+                $text-color: getLetterSpacing(primary-heading)
+            );
+        }
+
+        // Medium
+        // Class name: .text-primary-heading-md
+        &-md {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-heading, md),
+                $text-line-height: getLineHeight(primary-heading),
+                $text-color: getLetterSpacing(primary-heading)
+            );
+        }
+
+        // Large
+        // Class name: .text-primary-heading-lg
+        &-lg {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-heading, lg),
+                $text-line-height: getLineHeight(primary-heading),
+                $text-color: getLetterSpacing(primary-heading)
+            );
+        }
+
+        // Extra large
+        // Class name: .text-primary-heading-xl
+        &-xl {
+            @include text-variant(
+                $text-display: inline-block,
+                $text-font-family: getFontFamily(primary, medium),
+                $text-font-size: getFontSize(primary-heading, xl),
+                $text-line-height: getLineHeight(primary-heading),
+                $text-color: getLetterSpacing(primary-heading)
+            );
+        }
+    }
+
+    // STYLES OF MODIFIER CLASS
+    // >>>>>>>>>>>>>>>>>>>>>>>
+    &.is-bold {
+        font-family: getFontFamily(primary, bold);
+    }
+
+    // MEDIA QUERY
+    // >>>>>>>>>>>>>>>>>>>>>>>
+}
+
+// Browser variations
+// >>>>>>>>>>>>>>>>>>>>>>>
+// IE
+// Edge
+// Safari
+// Firefox
+
+// Calibration
+// - Base
+// - Window
+// - Mac
+// - iPhone/iPad
+// - Android
+// - 2 font in 2 language
+// ============================================================
+
+// Base
+// ------------------------------------------------
+
+// Window
+// ------------------------------------------------
+
+// Mac
+// ------------------------------------------------
+
+// iPhone/iPad
+// ------------------------------------------------
+
+// Android
+// ------------------------------------------------
+
+// 2 font in 2 language
+// ------------------------------------------------
