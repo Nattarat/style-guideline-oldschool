@@ -1,4 +1,4 @@
-# SCSS Guideline
+# Style Guideline
 
 ## Introduction
 แนวทางการเขียน SCSS สำหรับการพัฒนา Web Application โดยมีเป้าหมายเพื่อให้เกิดการเขียน Code ไปในทิศทางเดียวกัน ช่วยเสริมให้การ Learning, Debug, Refactor, Review, Feedback ของทีมทำได้สะดวกและรวดเร็วขึ้น
@@ -132,14 +132,14 @@ $primary-border-radius: 5px;
 
 ### Selector nesting
 * ลำดับการเขียน Selector ภายใน Element หรือ Component แบ่งส่วนประกอบเป็น 8 ส่วน ได้แก่
-  1. Mixins
-  2. Helpers
-  3. Parent styles: CSS Properties ของ Component
-  4. Child element styles: Elements ที่อยู่ใน Component
-  5. States: Class ที่ใช้เปลี่ยนแปลงลักษณะและสื่อความหมายของ Component เช่น success, error, warning, disabled มักถูกใช้ใน Form validation, Notification
-  6. Modifiers: Class ที่ใช้เปลี่ยนแปลงลักษณะของ Component เช่น สี/ขนาด/ตำแหน่ง ต่างๆ ซึ่งอาจจะสื่อความหมายหรือไม่ก็ได้
-  7. States with modifiers: Modifier ที่มีการเปลี่ยนแปลง CSS Properties ภายใต้ States
-  8. Media query: Breakpoint สำหรับ Styles ในหน้าจอขนาดต่างๆ
+  * Mixins
+  * Helpers
+  * Parent styles: CSS Properties ของ Component
+  * Child element styles: Elements ที่อยู่ใน Component
+  * States: Class ที่ใช้เปลี่ยนแปลงลักษณะและสื่อความหมายของ Component เช่น success, error, warning, disabled มักถูกใช้ใน Form validation, Notification
+  * Modifiers: Class ที่ใช้เปลี่ยนแปลงลักษณะของ Component เช่น สี/ขนาด/ตำแหน่ง ต่างๆ ซึ่งอาจจะสื่อความหมายหรือไม่ก็ได้
+  * States with modifiers: Modifier ที่มีการเปลี่ยนแปลง CSS Properties ภายใต้ States
+  * Media query: Breakpoint สำหรับ Styles ในหน้าจอขนาดต่างๆ
 * เขียน Nesting ซ้อนไม่เกิน 3 ชั้น (แต่ในงานจริงๆ เราจะเจอการใช้ Selector ที่มีการซ้อนมากกว่า 3 ชั้น ก็จะอนุโลมให้ในกรณี Class นั้นซ้อนอยู่ใน State, Modifier class, Media query)
 ```
 .button {
@@ -316,6 +316,11 @@ $color-gray-5: #111111;
 $color-gray-6: #000000;
 ```
 
+### Fonts
+* การตั้งชื่อไฟล์ให้ใช้ lowercase ขึ้นต้นด้วยชื่อ font คั่นแต่ละคำด้วย hyphen และตามด้วย weight เช่น db-helvethaica-x-regular.ttf
+* การตั้งชื่อ font-family ที่ @font-face ให้ตั้งชื่อตามไฟล์ font ที่อยู่ภายในเครื่อง แต่ไม่ต้องเว้นวรรคคำและคั่น weight ด้วย hyphen เช่น DBHelvithaicaX-Regular
+  * Windows > Control Panel > Fonts
+
 ### Sizing & Spacing
 * ขนาดและระยะห่างให้ใช้ตัวย่อแทนชื่อเต็ม
 ```
@@ -416,12 +421,49 @@ $color-gray-6: #000000;
 
 ## Architecture
 * โครงสร้างของ Style assets แบ่งออกเป็น 5 folders ได้แก่
-  1. css
-  2. fonts
-  3. images
-  4. js
-  5. scss
+  * css
+  * fonts
+  * images
+  * js
+  * scss
 
 ### css
 * เก็บไฟล์ CSS ที่เขียนขึ้นมาเอง และไฟล์ CSS ที่ไม่สามารถติดตั้งผ่านทาง Package manager eg. npm, yarn ได้(ต้องดาวน์โหลดมาติดตั้งเอง)
 
+### fonts
+* เก็บไฟล์ font ที่นำมาใช้ในเว็บไซต์ โดยภายในแบ่งเป็น folder ตาม font family
+* หลักเลี่ยงการใช้ font-weight: bold ถ้า font ที่นำมาใชัมี weight bold อยู่แล้ว เนื่องจาก font-weight: bold เป็นการทำให้ font หนาขึ้นโดย CSS ซึ่งไม่ได้เป็นความหนาที่มาจากการออกแบบ font
+
+### images
+* เก็บไฟล์ image ที่นำมาใช้ในเว็บไซต์ โดยภายในแบ่งเป็น folder ออกเป็น
+  * contents: เก็บ image ประเภทเนื้อหา, banner, background, graphic
+  * favicons
+  * icons
+  * logos
+
+
+```
+.{categoryImageName}-{imageName}_{stateName}@{imageDensity}.{extensionImageName}
+```
+
+* โครงสร้างชื่อ ประกอบด้วย
+  * categoryImageName: ชื่อ Category ของ image/icon (แบ่งตาม folder)
+  * imageName: ชื่อของ image/icon
+  * stateName: ชื่อ state ของ image/icon เช่น hover, active, disabled, success, pending, error
+  * imageDensity: density ของ image/icon เช่น 2x, 3x (ในกรณี 1x และ svg ไม่ต้องมี density กำกับ)
+  * extensionImageName: นามสกุลของ image/icon เช่น jpg, gif, png, svg
+
+* การตั้งชื่อ
+  * ชื่อประกอบด้วยคำ 2 คำ ขั้นด้วยขีดกลาง(ชื่อ category folder และ ชื่อ image) และถ้าคำๆ นั้นมีคำขยายหลายคำให้เขี่ยนต่อกันโดยใช้ตัวเล็ก เช่น
+    - default-user.png
+    - default-coverpage.jpg
+  * กรณี image อยู่ใน sub category เช่น icon(category folder) > brand(sub category folder) ให้ใช้ชื่อประกอบด้วยคำ 2 คำ ขั้นด้วยขีดกลาง(ชื่อ sub category และ ชื่อ image)
+    - brand-facebook.svg
+    - brand-youtube.svg
+  * กรณี image มี state เช่น active, disabled, success, pending, error ให้ใช้ _ ต่อท้ายชื่อ
+    - brand-facebook_hover.svg
+    - brand-youtube_selected.svg
+  * กรณี image มีหลาย size เช่น 32px, 64px หรือหลาย density เช่น 2x, 3x ให้ใช้ @ ต่อท้ายชื่อและระบุ size หรือ density
+    - favicon@small.png
+    - brand-facebook@2x.png
+    - brand-youtube@3x.png
