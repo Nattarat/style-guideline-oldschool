@@ -354,8 +354,8 @@ $color-gray-6: #000000;
 .name-extendedName {}
 ```
 โครงสร้างชื่อ ประกอบด้วย
-1. name: ชื่อที่ตั้งขึ้นต้องสอดคล้องกับหน้าตา/หน้าที่ของ Component
-2. extendedName: ชื่อประเภทของ Component ใช้เพื่อขยายความหมายของหน้าตาและหน้าที่
+1. name: ชื่อที่ตั้งขึ้นให้สอดคล้องกับหน้าตาและหน้าที่ของ Component
+2. extendedName: ชื่อที่ใช้เพื่อขยายความหมายของหน้าตาและหน้าที่
 ```
 .card-primary {}
 .container-vertical-middle {}
@@ -363,11 +363,12 @@ $color-gray-6: #000000;
 
 * Child component name
 ```
-.componentName-extendedName {...}
+.componentName-childComponentName-extendedName {...}
 ```
 โครงสร้างชื่อ ประกอบด้วย
-1. componentName: ชื่อของ Component (ไม่รวม extendedName)
-2. extendedName: ชื่อของ Child ใน Component ใช้เพื่อขยายความหมายของหน้าตาและหน้าที่
+1. componentName: ชื่อของ Component (ไม่รวม childComponentName)
+2. childComponentName: ชื่อของ Child ใน Component
+3. extendedName: ชื่อที่ใช้เพื่อขยายความหมายของหน้าตาและหน้าที่
 ```
 .card-primary {
   .card-outer {...}
@@ -419,6 +420,48 @@ $color-gray-6: #000000;
 }
 ```
 
+### Image
+```
+// contents
+.pageName-extendedName
+
+// favicons, icons, logos, shares
+.roleName-extendedName
+
+// images with density
+.roleName-extendedName@densityUnit
+```
+
+โครงสร้างชื่อ ประกอบด้วย
+  * pageName: ชื่อหน้าเว็บไซต์ที่นำรูปไปใช้
+  * roleName: ชื่อโฟลเดอร์ หรือ ชื่อที่อธิบายถึงสิ่งนั้นๆ (อนุญาตให้ใช้ชื่อย่อได้ ถ้าชื่อนั้นเป็นชื่อที่ทุกคนอ่านแล้วเข้าใจ เช่น background > bg, icon > ic)
+  * densityUnit: ชื่อย่อที่แสดงถึงขนาดรูป เช่น 2x, 3x, xs, md, lg (ในกรณี 1x และ svg ไม่ต้องมี density กำกับ)
+  * extendedName: ชื่อที่ใช้เพื่อขยายความหมายของหน้าตาและหน้าที่
+
+```
+// contents
+home-banner.jpg
+home-cover-page.jpg
+
+// favicons
+favicon.ico
+
+// icons
+icon-interface-close-line.svg
+icon-social-facebook-square.png
+
+// logos
+logo-react.svg
+
+// shares
+bg-gradient-noise-blue.jpg
+ribbon-awwwards-honors-green-left.png
+
+// images with density
+favicon@xs.png
+icon-social-facebook-square@2x.png
+```
+
 ## Architecture
 * โครงสร้างของ Style assets แบ่งออกเป็น 5 folders ได้แก่
   * css
@@ -436,34 +479,14 @@ $color-gray-6: #000000;
 
 ### images
 * เก็บไฟล์ image ที่นำมาใช้ในเว็บไซต์ โดยภายในแบ่งเป็น folder ออกเป็น
-  * contents: เก็บ image ประเภทเนื้อหา, banner, background, graphic
-  * favicons
-  * icons
-  * logos
+  * contents: เก็บ Content image, Banner (เป็นรูปที่ภายหลัง User จะเป็นคนใส่เองจาก CMS)
+  * favicons: เก็บ Favicon
+  * icons: เก็บ Icon
+  * logos: เก็บ Logo
+  * shares: เก็บ Background, Graphic (เป็นรูปที่เกี่ยวข้องกับ Layout และ Design ที่สามารถหยิบไปใช้ได้ทุกที่)
 
+### js
+* เก็บไฟล์ javascript ที่เขียนขึ้นมาเอง และไฟล์ javascript ที่เป็น Library/Plugin ต่างๆ เช่น jQuery, Carousel, Lightbox
 
-```
-.{categoryImageName}-{imageName}_{stateName}@{imageDensity}.{extensionImageName}
-```
+### scss
 
-* โครงสร้างชื่อ ประกอบด้วย
-  * categoryImageName: ชื่อ Category ของ image/icon (แบ่งตาม folder)
-  * imageName: ชื่อของ image/icon
-  * stateName: ชื่อ state ของ image/icon เช่น hover, active, disabled, success, pending, error
-  * imageDensity: density ของ image/icon เช่น 2x, 3x (ในกรณี 1x และ svg ไม่ต้องมี density กำกับ)
-  * extensionImageName: นามสกุลของ image/icon เช่น jpg, gif, png, svg
-
-* การตั้งชื่อ
-  * ชื่อประกอบด้วยคำ 2 คำ ขั้นด้วยขีดกลาง(ชื่อ category folder และ ชื่อ image) และถ้าคำๆ นั้นมีคำขยายหลายคำให้เขี่ยนต่อกันโดยใช้ตัวเล็ก เช่น
-    - default-user.png
-    - default-coverpage.jpg
-  * กรณี image อยู่ใน sub category เช่น icon(category folder) > brand(sub category folder) ให้ใช้ชื่อประกอบด้วยคำ 2 คำ ขั้นด้วยขีดกลาง(ชื่อ sub category และ ชื่อ image)
-    - brand-facebook.svg
-    - brand-youtube.svg
-  * กรณี image มี state เช่น active, disabled, success, pending, error ให้ใช้ _ ต่อท้ายชื่อ
-    - brand-facebook_hover.svg
-    - brand-youtube_selected.svg
-  * กรณี image มีหลาย size เช่น 32px, 64px หรือหลาย density เช่น 2x, 3x ให้ใช้ @ ต่อท้ายชื่อและระบุ size หรือ density
-    - favicon@small.png
-    - brand-facebook@2x.png
-    - brand-youtube@3x.png
