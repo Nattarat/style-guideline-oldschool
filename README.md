@@ -314,7 +314,6 @@ $primary-border-radius: 5px;
 // Chrome Android
 .chrome-mobile {}
 ```
-*
 
 ## Naming conventions
 * Selectors, Variables, Mixins, Functions ให้ตั้งชื่อด้วย Lowercase คั่นระหว่างคำด้วย Hyphen
