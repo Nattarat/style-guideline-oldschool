@@ -5,8 +5,12 @@
 // * Path files
 // * Colors
 // * Font families
+// * Font sizes
+// * Line heights
+// * Letter spacings
+// * Text styles
 // * Z indexs
-// * Screens (Physical width of device)
+// * Breakpoints (Physical width of device screen)
 // * Animation timings
 // * Border radiuses
 // * Box shadows
@@ -91,58 +95,58 @@ $z-index-3: 99 !default;
 $z-index-4: 999 !default;
 $z-index-5: 9999 !default;
 
-// Screens (Physical width of device)
+// Breakpoints (Physical width of device screen)
 // ============================================================
 // Mobile
-$screen-mobile-xs: 320px !default;
-$screen-mobile-sm: 360px !default;
-$screen-mobile-md: 375px !default;
-$screen-mobile-lg: 414px !default;
+$breakpoint-mobile-xs: 320px !default;
+$breakpoint-mobile-sm: 360px !default;
+$breakpoint-mobile-md: 375px !default;
+$breakpoint-mobile-lg: 414px !default;
 
 // Phablet
-$screen-phablet-xs: 480px !default;
-$screen-phablet-sm: 640px !default;
-$screen-phablet-md: 667px !default;
-$screen-phablet-lg: 736px !default;
+$breakpoint-phablet-xs: 480px !default;
+$breakpoint-phablet-sm: 640px !default;
+$breakpoint-phablet-md: 667px !default;
+$breakpoint-phablet-lg: 736px !default;
 
 // Tablet
-$screen-tablet-xs: 768px !default;
-$screen-tablet-sm: 800px !default;
-$screen-tablet-md: 812px !default;
-$screen-tablet-lg: 1024px !default;
+$breakpoint-tablet-xs: 768px !default;
+$breakpoint-tablet-sm: 800px !default;
+$breakpoint-tablet-md: 812px !default;
+$breakpoint-tablet-lg: 1024px !default;
 
 // Desktop
-$screen-desktop-xs: 1280px !default;
-$screen-desktop-sm: 1366px !default;
-$screen-desktop-md: 1440px !default;
-$screen-desktop-lg: 1600px !default;
-$screen-desktop-xl: 1920px !default;
-$screen-desktop-xxl: 2560px !default;
+$breakpoint-desktop-xs: 1280px !default;
+$breakpoint-desktop-sm: 1366px !default;
+$breakpoint-desktop-md: 1440px !default;
+$breakpoint-desktop-lg: 1600px !default;
+$breakpoint-desktop-xl: 1920px !default;
+$breakpoint-desktop-xxl: 2560px !default;
 
 // Mobile max
-$screen-mobile-xs-max: ($screen-mobile-sm - 1px) !default;
-$screen-mobile-sm-max: ($screen-mobile-md - 1px) !default;
-$screen-mobile-md-max: ($screen-mobile-lg - 1px) !default;
-$screen-mobile-lg-max: ($screen-phablet-xs - 1px) !default;
+$breakpoint-mobile-xs-max: ($breakpoint-mobile-sm - 1px) !default;
+$breakpoint-mobile-sm-max: ($breakpoint-mobile-md - 1px) !default;
+$breakpoint-mobile-md-max: ($breakpoint-mobile-lg - 1px) !default;
+$breakpoint-mobile-lg-max: ($breakpoint-phablet-xs - 1px) !default;
 
 // Phablet max
-$screen-phablet-xs-max: ($screen-phablet-sm - 1px) !default;
-$screen-phablet-sm-max: ($screen-phablet-md - 1px) !default;
-$screen-phablet-md-max: ($screen-phablet-lg - 1px) !default;
-$screen-phablet-lg-max: ($screen-tablet-xs - 1px) !default;
+$breakpoint-phablet-xs-max: ($breakpoint-phablet-sm - 1px) !default;
+$breakpoint-phablet-sm-max: ($breakpoint-phablet-md - 1px) !default;
+$breakpoint-phablet-md-max: ($breakpoint-phablet-lg - 1px) !default;
+$breakpoint-phablet-lg-max: ($breakpoint-tablet-xs - 1px) !default;
 
 // Tablet max
-$screen-tablet-xs-max: ($screen-tablet-sm - 1px) !default;
-$screen-tablet-sm-max: ($screen-tablet-md - 1px) !default;
-$screen-tablet-md-max: ($screen-tablet-lg - 1px) !default;
-$screen-tablet-lg-max: ($screen-desktop-xs - 1px) !default;
+$breakpoint-tablet-xs-max: ($breakpoint-tablet-sm - 1px) !default;
+$breakpoint-tablet-sm-max: ($breakpoint-tablet-md - 1px) !default;
+$breakpoint-tablet-md-max: ($breakpoint-tablet-lg - 1px) !default;
+$breakpoint-tablet-lg-max: ($breakpoint-desktop-xs - 1px) !default;
 
 // Desktop max
-$screen-desktop-xs-max: ($screen-desktop-sm - 1px) !default;
-$screen-desktop-sm-max: ($screen-desktop-md - 1px) !default;
-$screen-desktop-md-max: ($screen-desktop-lg - 1px) !default;
-$screen-desktop-lg-max: ($screen-desktop-xl - 1px) !default;
-$screen-desktop-xl-max: ($screen-desktop-xxl - 1px) !default;
+$breakpoint-desktop-xs-max: ($breakpoint-desktop-sm - 1px) !default;
+$breakpoint-desktop-sm-max: ($breakpoint-desktop-md - 1px) !default;
+$breakpoint-desktop-md-max: ($breakpoint-desktop-lg - 1px) !default;
+$breakpoint-desktop-lg-max: ($breakpoint-desktop-xl - 1px) !default;
+$breakpoint-desktop-xl-max: ($breakpoint-desktop-xxl - 1px) !default;
 
 // Animation timings
 // ============================================================

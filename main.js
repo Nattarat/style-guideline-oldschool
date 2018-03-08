@@ -4,15 +4,13 @@ $(function() {
     $('html').addClass('ie');
   } else if (is.edge()) {
     $('html').addClass('edge');
-  } else if (is.safari()) {
+  } else if (is.mac() && is.safari()) {
     $('html').addClass('safari');
   } else if (is.firefox()) {
     $('html').addClass('firefox');
-  } else if (is.android()) {
-    $('html').addClass('android');
-  } else if (is.iphone() && is.safari()) {
+  } else if ((is.iphone() || is.ipad()) && is.safari()) {
     $('html').addClass('safari-mobile');
-  } else if (is.ipad() && is.safari()) {
-    $('html').addClass('safari-mobile');
+  } else if (is.android() && is.chrome()) {
+    $('html').addClass('chrome-mobile');
   }
 });

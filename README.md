@@ -3,6 +3,33 @@
 ## Introduction
 แนวทางการเขียน SCSS สำหรับการพัฒนา Web Application โดยมีเป้าหมายเพื่อให้เกิดการเขียน Code ไปในทิศทางเดียวกัน ช่วยเสริมให้การ Learning, Debug, Refactor, Review, Feedback ของทีมทำได้สะดวกและรวดเร็วขึ้น
 
+## Table of contents
+* [Syntax & Formatting](#syntax-formatting)
+* [Strings](#strings)
+* [Numbers](#numbers)
+* [Colors](#colors)
+* [Property sorting](#property-sorting)
+* [Selector nesting](#selector-nesting)
+* [Naming conventions](#naming-conventions)
+  * [Color](#color)
+  * [Font](#font)
+  * [Sizing & Spacing](#sizing-spacing)
+  * [Component](#component)
+  * [Image](#image)
+* [Architecture](#architecture)
+  * [css](#css)
+  * [fonts](#fonts)
+  * [images](#images)
+  * [js](#js)
+  * [scss](#scss)
+  * [videos](#videos)
+* [Responsive web design and Breakpoints](#responsive-web-design-and-breakpoints)
+  * [Mobile portrait](#mobile-portrait)
+  * [Mobile landscape](#mobile-landscape)
+  * [Tablet](#tablet)
+  * [Laptop](#laptop)
+  * [Desktop](#desktop)
+
 ## Syntax & Formatting
 * ใช้ 2 spaces indents (ไม่ใช้ tabs)
 * หลังชื่อ Selector และ Property ให้เว้น 1 space
@@ -214,7 +241,7 @@ $primary-border-radius: 5px;
 
 // Browser variations
 // >>>>>>>>>>>>>>>>>>>>>>>
-// IE
+// IE 10-11
 .ie {
   .button {
     min-width: auto;
@@ -223,8 +250,19 @@ $primary-border-radius: 5px;
 }
 
 // Edge
-// Safari
+.edge {}
+
+// Safari mac
+.safari {}
+
 // Firefox
+.firefox {}
+
+// Safari iPhone/iPad
+.safari-mobile {}
+
+// Chrome Android
+.chrome-mobile {}
 ```
 * ต้องมี Comment ของแต่ละลำดับส่วนไว้เพื่อให้ง่ายต่อการไล่ดู Code
 * Comment ของแต่ละลำดับส่วนให้มีเฉพาะ Parent selector เท่านั้น เพราะ ถ้า Child selector มีด้วยจะดูสับสนเกินไป
@@ -258,10 +296,23 @@ $primary-border-radius: 5px;
 
 // Browser variations
 // >>>>>>>>>>>>>>>>>>>>>>>
-// IE
+// IE 10-11
+.ie {}
+
 // Edge
-// Safari
+.edge {}
+
+// Safari mac
+.safari {}
+
 // Firefox
+.firefox {}
+
+// Safari iPhone/iPad
+.safari-mobile {}
+
+// Chrome Android
+.chrome-mobile {}
 ```
 *
 
@@ -316,7 +367,7 @@ $color-gray-5: #111111;
 $color-gray-6: #000000;
 ```
 
-### Fonts
+### Font
 * การตั้งชื่อไฟล์ให้ใช้ lowercase ขึ้นต้นด้วยชื่อ font คั่นแต่ละคำด้วย hyphen และตามด้วย weight เช่น db-helvethaica-x-regular.ttf
 * การตั้งชื่อ font-family ที่ @font-face ให้ตั้งชื่อตามไฟล์ font ที่อยู่ภายในเครื่อง แต่ไม่ต้องเว้นวรรคคำและคั่น weight ด้วย hyphen เช่น DBHelvithaicaX-Regular
   * Windows > Control Panel > Fonts
@@ -463,7 +514,7 @@ icon-social-facebook-square@2x.png
 ```
 
 ## Architecture
-* โครงสร้างของ Style assets แบ่งออกเป็น 5 folders ได้แก่
+* โครงสร้างของ Style assets แบ่งออกเป็น 5 ส่วน ได้แก่
   * css
   * fonts
   * images
@@ -489,4 +540,178 @@ icon-social-facebook-square@2x.png
 * เก็บไฟล์ javascript ที่เขียนขึ้นมาเอง และไฟล์ javascript ที่เป็น Library/Plugin ต่างๆ เช่น jQuery, Carousel, Lightbox
 
 ### scss
+* โครงสร้างของ scss แบ่งออกเป็น 6 ส่วน ได้แก่
+  * bases: เก็บไฟล์สไตล์ตั้งต้นของโปรเจค ประกอบด้วย
+    - reset: รีเซต CSS Properties ตั้งต้นของ HTML tags เพื่อให้ Browser ต่างๆ ใช้ค่าตั้งต้นเดียวกัน
+    - scaffolding: ตั้งค่า CSS Properties ตั้งต้นของ HTML tags ใหม่สำหรับโปรเจค
+    - typography: Embed font family และเก็บ font style ของโปรเจค
+    - variables: ตั้งค่าตัวแปรที่ใช้กับ Style ในโปรเจค เช่น Colors, Font families
+  * components: เก็บไฟล์สไตล์ Component ของโปรเจค เช่น Button, Dropdown
+  * helpers: เก็บไฟล์สไตล์ที่สามารถใช้ข้ามโปรเจคได้ โดยไฟล์ในโฟลเดอร์นี้จะไม่ถูก compiled ออกมาเป็น CSS (ยกเว้น utilities)
+    - mixins: เก็บ CSS ที่เป็น group properties ที่สามารถเปลี่ยนแปลงค่าได้และใช้งานเป็นประจำ
+    - utilities: เก็บ CSS ที่เป็น single property หรือ group properties ที่ไม่สามารถเปลี่ยนแปลงค่าได้และใช้งานเป็นประจำ
+  * layouts: เก็บไฟล์สไตล์โครงสร้างหลักของเว็บไซต์ เช่น topbar, sidebar และ footer เป็นต้น (ไม่มีการ reuse ใช้หลายที่ๆ เหมือน Components แต่เป็นการใช้ร่วมกันในแต่ละหน้า)
+    - สร้าง Parent class เป็นชื่อโครงสร้างหลักนั้นๆ เช่น
+    ```
+    .topbar {...}
 
+    .sidebar {...}
+
+    .footer {...}
+    ```
+  * pages: เก็บไฟล์สไตล์ที่มีเฉพาะหน้าเว็บไซต์นั้นๆ เท่านั้น โดยสไตล์เหล่านี้จะนำไปใช้ในหน้าอื่นๆ ไม่ได้
+    - สร้าง Parent class เป็นชื่อหน้าเว็บไซต์นั้นๆ เช่น home, about, contact
+    ```
+    .home {...}
+
+    .about {...}
+
+    .contact {...}
+    ```
+  * main: ไฟล์รวมสไตล์ทั้งหมดสำหรับ Compile มาเป็น main.css เพื่อนำไปใช้ในเว็บไซต์
+
+### videos
+* เก็บไฟล์ videos
+
+## Responsive web design and Breakpoints
+* แบ่ง Breakpoints เป็นช่วงตามประเภท Devices ดังนี้
+* การแบ่งช่วงของ Mobile/Tablet อ้างอิง Devices ของ Apple/Sumsung เป็นหลักและ Laptop/Desktop อ้างอิง Monitor statistics แต่ละปีเป็นหลัก
+* การเขียน @media มีรูปแบบ ดังนี้
+```
+// Min width
+@media (min-width: $breakpoint-mobile-lg) {
+  ...
+}
+
+// Max width
+@media (max-width: $breakpoint-tablet-lg) {
+  ...
+}
+
+// Min-Max width
+@media (min-width: $breakpoint-mobile-lg) and (max-width: $breakpoint-tablet-lg) {
+  ...
+}
+```
+* การทำ Responsive style ให้กับ Class selector มีรูปแบบ ดังนี้
+  - เขียนใน Scope ของแต่ละ Class selector ถึงจะเยอะ แต่ไล่จัดการได้ง่ายกว่าการเขียนแบบ Parent ครอบไว้ เพราะทุก Breakpoints อยู่ใน Scope ของ Class selector นั้นๆ ไม่กระจัดกระจายไปตาม Breakpoints ที่เป็นแบบ Parent
+```
+.foo {
+  // Mixins
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Helpers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Parent styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  color: $color-gray-1;
+
+  // Child element styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  .foo-bar {
+    background-color: $color-blue-1;
+
+    .foo-bar-ha {
+      border-color: $color-red-1;
+    }
+  }
+
+  // States
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Media queries
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  // Good
+  @media (min-width: $breakpoint-mobile-lg) {
+    color: $color-gray-2;
+  }
+
+  @media (max-width: $breakpoint-tablet-lg) {
+    background-color: $color-gray-3;
+  }
+
+  .foo-bar {
+    @media (max-width: $breakpoint-mobile-lg) {
+      background-color: $color-blue-2;
+    }
+
+    @media (max-width: $breakpoint-tablet-lg) {
+      background-color: $color-blue-3;
+    }
+
+    .foo-bar-ha {
+      @media (min-width: $breakpoint-mobile-lg) and (max-width: $breakpoint-tablet-lg) {
+        border-color: $color-red-2;
+      }
+    }
+  }
+
+  // Bad
+  @media (min-width: $breakpoint-mobile-lg) {
+    color: $color-gray-2;
+
+    .foo-bar {
+      background-color: $color-blue-2;
+    }
+  }
+
+  @media (min-width: $breakpoint-mobile-lg) {
+    color: $color-gray-3;
+
+    .foo-bar {
+      background-color: $color-blue-3;
+    }
+  }
+
+  @media (min-width: $breakpoint-mobile-lg) and (max-width: $breakpoint-tablet-lg) {
+    .foo-bar {
+      .foo-bar-ha {
+        border-color: $color-red-2;
+      }
+    }
+  }
+}
+```
+
+### Mobile portrait
+* 320 px > iPhone 5, 5s
+* 360 px > Sumsung(Middle tier)
+* 375 px > iPhone 6, 7, 8, X
+* 414 px > iPhone 6s, 7s, 8s
+
+### Mobile landscape
+* 480 px > iPhone 5
+* 640 px > Sumsung(Middle tier)
+* 667 px > iPhone 6, 7, 8
+* 736 px > iPhone 6s, 7s, 8s
+* 812 px > iPhone X
+
+### Tablet
+* 768 px > iPad, iPad mini/Air
+* 800 px > Samsung Galaxy Tab
+* 1024 px > iPad, iPad mini/Air landscape
+
+### Laptop
+* 1280 px > Samsung Galaxy Tab landscape, MDPI Screen
+* 1366 px > iPad Pro landscape
+* 1440 px > Microsoft Surface Pro, HiDPI Screen
+
+### Desktop
+* 1600 px > Wide Screen
+* 1920 px > HD Screen
+* 2560 px > iMac
+
+## ระบบ Typography
+### วิธีการสร้าง
+### วิธีการใช้งาน
+
+## ระบบ Component
+### วิธีการสร้าง
+### วิธีการใช้งาน

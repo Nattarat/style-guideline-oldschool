@@ -34,7 +34,20 @@
 
 // Browser variations
 // >>>>>>>>>>>>>>>>>>>>>>>
-// IE
+// IE 10-11
+.ie {}
+
 // Edge
-// Safari
+.edge {}
+
+// Safari mac
+.safari {}
+
 // Firefox
+.firefox {}
+
+// Safari iPhone/iPad
+.safari-mobile {}
+
+// Chrome Android
+.chrome-mobile {}
