@@ -574,8 +574,7 @@ icon-social-facebook-square@2x.png
 * เก็บไฟล์ videos
 
 ## Responsive web design and Breakpoints
-* แบ่ง Breakpoints เป็นช่วงตามประเภท Devices ดังนี้
-* การแบ่งช่วงของ Mobile/Tablet อ้างอิง Devices ของ Apple/Sumsung เป็นหลักและ Laptop/Desktop อ้างอิง Monitor statistics แต่ละปีเป็นหลัก
+* แบ่ง Breakpoints เป็นช่วงตามประเภท Devices โดยการแบ่งช่วงของ Mobile/Tablet อ้างอิง Devices ของ Apple/Sumsung เป็นหลักและ Laptop/Desktop อ้างอิง Monitor statistics แต่ละปีเป็นหลัก
 ### Mobile portrait
 * 320 px > iPhone 5, 5s
 * 360 px > Sumsung(Middle tier)
