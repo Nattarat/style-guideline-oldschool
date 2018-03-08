@@ -576,7 +576,35 @@ icon-social-facebook-square@2x.png
 ## Responsive web design and Breakpoints
 * แบ่ง Breakpoints เป็นช่วงตามประเภท Devices ดังนี้
 * การแบ่งช่วงของ Mobile/Tablet อ้างอิง Devices ของ Apple/Sumsung เป็นหลักและ Laptop/Desktop อ้างอิง Monitor statistics แต่ละปีเป็นหลัก
-* การเขียน @media มีรูปแบบ ดังนี้
+### Mobile portrait
+* 320 px > iPhone 5, 5s
+* 360 px > Sumsung(Middle tier)
+* 375 px > iPhone 6, 7, 8, X
+* 414 px > iPhone 6s, 7s, 8s
+
+### Mobile landscape
+* 480 px > iPhone 5
+* 640 px > Sumsung(Middle tier)
+* 667 px > iPhone 6, 7, 8
+* 736 px > iPhone 6s, 7s, 8s
+* 812 px > iPhone X
+
+### Tablet
+* 768 px > iPad, iPad mini/Air
+* 800 px > Samsung Galaxy Tab
+* 1024 px > iPad, iPad mini/Air landscape
+
+### Laptop
+* 1280 px > Samsung Galaxy Tab landscape, MDPI Screen
+* 1366 px > iPad Pro landscape
+* 1440 px > Microsoft Surface Pro, HiDPI Screen
+
+### Desktop
+* 1600 px > Wide Screen
+* 1920 px > HD Screen
+* 2560 px > iMac
+
+### รูปแบบการเขียน @media
 ```
 // Min width
 @media (min-width: $breakpoint-mobile-lg) {
@@ -679,34 +707,6 @@ icon-social-facebook-square@2x.png
   }
 }
 ```
-
-### Mobile portrait
-* 320 px > iPhone 5, 5s
-* 360 px > Sumsung(Middle tier)
-* 375 px > iPhone 6, 7, 8, X
-* 414 px > iPhone 6s, 7s, 8s
-
-### Mobile landscape
-* 480 px > iPhone 5
-* 640 px > Sumsung(Middle tier)
-* 667 px > iPhone 6, 7, 8
-* 736 px > iPhone 6s, 7s, 8s
-* 812 px > iPhone X
-
-### Tablet
-* 768 px > iPad, iPad mini/Air
-* 800 px > Samsung Galaxy Tab
-* 1024 px > iPad, iPad mini/Air landscape
-
-### Laptop
-* 1280 px > Samsung Galaxy Tab landscape, MDPI Screen
-* 1366 px > iPad Pro landscape
-* 1440 px > Microsoft Surface Pro, HiDPI Screen
-
-### Desktop
-* 1600 px > Wide Screen
-* 1920 px > HD Screen
-* 2560 px > iMac
 
 ## ระบบ Typography
 ### วิธีการสร้าง
