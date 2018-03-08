@@ -1,7 +1,7 @@
-# Style Guideline
+# Style Guideline Old School
 
-## Introduction
-แนวทางการเขียน SCSS สำหรับการพัฒนา Web Application โดยมีเป้าหมายเพื่อให้เกิดการเขียน Code ไปในทิศทางเดียวกัน ช่วยเสริมให้การ Learning, Debug, Refactor, Review, Feedback ของทีมทำได้สะดวกและรวดเร็วขึ้น
+* แนวทางการเขียน SCSS สำหรับการพัฒนา Web Application โดยมีเป้าหมายเพื่อให้เกิดการเขียน Code ไปในทิศทางเดียวกัน ช่วยเสริมให้การ Learning, Debug, Refactor, Review, Feedback ของทีมทำได้สะดวกและรวดเร็วขึ้น
+* Guideline นี้จะมีลักษณะที่เขียน Style แยกออกมาเป็นไฟล์เดียวและ include เข้าไปที่ head โดยโปรเจคที่นำ Guideline นี้ไปใช้งาน ได้แก่ MVC .net, Magento, Symphony, Wordpress, Angular 1, None frontend framework เป็นต้น
 
 ## Table of contents
 * [Syntax & Formatting](#syntax-formatting)
@@ -29,6 +29,7 @@
   * [Tablet](#tablet)
   * [Laptop](#laptop)
   * [Desktop](#desktop)
+  * [@media Pattern](#media-pattern)
 
 ## Syntax & Formatting
 * ใช้ 2 spaces indents (ไม่ใช้ tabs)
@@ -574,6 +575,7 @@ icon-social-facebook-square@2x.png
 
 ## Responsive web design and Breakpoints
 * แบ่ง Breakpoints เป็นช่วงตามประเภท Devices โดยการแบ่งช่วงของ Mobile/Tablet อ้างอิง Devices ของ Apple/Sumsung เป็นหลักและ Laptop/Desktop อ้างอิง Monitor statistics แต่ละปีเป็นหลัก
+
 ### Mobile portrait
 * 320 px > iPhone 5, 5s
 * 360 px > Sumsung(Middle tier)
@@ -602,7 +604,7 @@ icon-social-facebook-square@2x.png
 * 1920 px > HD Screen
 * 2560 px > iMac
 
-### รูปแบบการเขียน @media
+### @media Pattern
 ```
 // Min width
 @media (min-width: $breakpoint-mobile-lg) {
