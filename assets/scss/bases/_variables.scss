@@ -67,11 +67,11 @@ $line-height-primary-heading: 1.6 !default;
 
 // Letter spacings
 // ============================================================
-$letter-spacing-primary-body: initial !default;
-$letter-spacing-primary-heading: initial !default;
+$letter-spacing-primary-body: normal !default;
+$letter-spacing-primary-heading: normal !default;
 
 // Text styles
-// your stylesheets. Example: @extend $text-style-primary-body-xs;
+// your stylesheets. Example: @extend #{$text-style-primary-body-xs};
 // ============================================================
 // Primary body
 $text-style-primary-body-xs: '.text-primary-body-xs' !default;

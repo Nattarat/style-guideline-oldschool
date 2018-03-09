@@ -52,8 +52,7 @@
   $button-border-color-hover: transparent,
 
   // Text
-  $button-text-font-family: $font-family-primary-medium,
-  $button-text-font-size: $font-size-primary-body-sm,
+  $button-text-style: $text-style-primary-body-sm,
   $button-text-color: $color-white-1,
 
   // Text hover
@@ -110,28 +109,8 @@
   }
 
   .button-text {
-    display: inline-block;
-    font-family: $button-text-font-family;
-    font-size: $button-text-font-size;
-    line-height: 1;
+    @extend #{$button-text-style};
     color: $button-text-color;
-    vertical-align: middle;
-
-    &.is-size-md {
-      font-size: $font-size-primary-body-md;
-    }
-
-    &.is-size-xl {
-      font-size: $font-size-primary-body-xl;
-    }
-
-    &.is-uppercase {
-      text-transform: uppercase;
-    }
-
-    &.is-bold {
-      font-family: $font-family-primary-bold;
-    }
   }
 
   // States
@@ -272,8 +251,7 @@
     $button-border-color-hover: initial,
 
     // Text
-    $button-text-font-family: $font-family-primary-medium,
-    $button-text-font-size: $font-size-primary-body-sm,
+    $button-text-style: $text-style-primary-body-sm,
     $button-text-color: $color-gray-4,
 
     // Text hover

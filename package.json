@@ -1,7 +1,7 @@
 {
-  "name": "project_name",
-  "version": "0.0.1",
-  "description": "project_description",
+  "name": "style-guideline-oldschool",
+  "version": "1.0.0",
+  "description": "แนวทางการเขียน SCSS สำหรับการพัฒนา Web Application โดยมีเป้าหมายเพื่อให้เกิดการเขียน Code ไปในทิศทางเดียวกัน ช่วยเสริมให้การ Learning, Debug, Refactor, Review, Feedback ของทีมทำได้สะดวกและรวดเร็วขึ้น โดย Guideline นี้จะมีลักษณะที่เขียน Style แยกออกมาเป็นไฟล์เดียวและ include เข้าไปที่ head โดยโปรเจคที่นำ Guideline นี้ไปใช้งาน ได้แก่ ASP.net, Magento, Symphony, Wordpress, Angular 1, None frontend framework เป็นต้น",
   "main": "main.js",
   "scripts": {
     "start": "concurrently \"npm run sass\" \"npm run watch\" \"npm run serve\"",
@@ -10,7 +10,7 @@
     "watch": "npm run --watch",
     "serve": "lite-server"
   },
-  "author": "project_author",
+  "author": "Nattarat Srila",
   "license": "ISC",
   "dependencies": {
     "is_js": "^0.9.0",

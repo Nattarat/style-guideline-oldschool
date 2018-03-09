@@ -1,7 +1,7 @@
 # Style Guideline Old School
 
 * แนวทางการเขียน SCSS สำหรับการพัฒนา Web Application โดยมีเป้าหมายเพื่อให้เกิดการเขียน Code ไปในทิศทางเดียวกัน ช่วยเสริมให้การ Learning, Debug, Refactor, Review, Feedback ของทีมทำได้สะดวกและรวดเร็วขึ้น
-* Guideline นี้จะมีลักษณะที่เขียน Style แยกออกมาเป็นไฟล์เดียวและ include เข้าไปที่ head โดยโปรเจคที่นำ Guideline นี้ไปใช้งาน ได้แก่ MVC .net, Magento, Symphony, Wordpress, Angular 1, None frontend framework เป็นต้น
+* Guideline นี้จะมีลักษณะที่เขียน Style แยกออกมาเป็นไฟล์เดียวและ include เข้าไปที่ head โดยโปรเจคที่นำ Guideline นี้ไปใช้งาน ได้แก่ ASP.net, Magento, Symphony, Wordpress, Angular 1, None frontend framework เป็นต้น
 
 ## Table of contents
 * [Syntax & Formatting](#syntax-formatting)
@@ -11,25 +11,29 @@
 * [Property sorting](#property-sorting)
 * [Selector nesting](#selector-nesting)
 * [Naming conventions](#naming-conventions)
-  * [Color](#color)
-  * [Font](#font)
-  * [Sizing & Spacing](#sizing-spacing)
-  * [Component](#component)
-  * [Image](#image)
+  - [Color](#color)
+  - [Font](#font)
+  - [Sizing & Spacing](#sizing-spacing)
+  - [Component](#component)
+  - [Image](#image)
 * [Architecture](#architecture)
-  * [css](#css)
-  * [fonts](#fonts)
-  * [images](#images)
-  * [js](#js)
-  * [scss](#scss)
-  * [videos](#videos)
+  - [css](#css)
+  - [fonts](#fonts)
+  - [images](#images)
+  - [js](#js)
+  - [scss](#scss)
+  - [videos](#videos)
 * [Responsive web design and Breakpoints](#responsive-web-design-and-breakpoints)
-  * [Mobile portrait](#mobile-portrait)
-  * [Mobile landscape](#mobile-landscape)
-  * [Tablet](#tablet)
-  * [Laptop](#laptop)
-  * [Desktop](#desktop)
-  * [@media Pattern](#media-pattern)
+  - [Mobile portrait](#mobile-portrait)
+  - [Mobile landscape](#mobile-landscape)
+  - [Tablet](#tablet)
+  - [Laptop](#laptop)
+  - [Desktop](#desktop)
+  - [@media Pattern](#media-pattern)
+* [Typography](#typography)
+  - [Anatomy](#anatomy)
+  - [Setting-up](#setting-up)
+  - [Usage](#usage)
 
 ## Syntax & Formatting
 * ใช้ 2 spaces indents (ไม่ใช้ tabs)
@@ -708,10 +712,179 @@ icon-social-facebook-square@2x.png
 }
 ```
 
-## ระบบ Typography
-### วิธีการสร้าง
-### วิธีการใช้งาน
+## Typography
+* หลีกเลี่ยงการเขียน Font/Text (CSS properties) ใน Class selector ที่เป็น Container เนื่องจากต้องการความเป็น Scope/Local และ Semantic ของ Class selecctor ที่มากขึ้น (CSS properties ของ Parent class ควรแสดงผลกับตัวมันเองเท่านั้น ไม่ควรส่งผลต่อ Child class)
+* นำ Typography ออกมาจาก Container โดยแยกเขียนเป็น Class selector ออกมาต่างหาก
 
-## ระบบ Component
-### วิธีการสร้าง
-### วิธีการใช้งาน
+### Anatomy
+1. Family-Weight: หน้าตาของตัวอักษร(ชื่อและความหนา)
+    * ความหนาของตัวอักษร เช่น Light, Regular, Bold, Black เป็นความหนาของตัว Font เองไม่ใช่ความหนาที่เกิดจาก CSS property
+    * ในกรณีไม่ได้ Embed font ใส่ในโปรเจค แต่ใช้ Google Font วิธีการให้ได้มาซึ่ง Font weight ต่างๆ จะใช้การอ้างอิง font-weight ที่เป็นตัวเลข เช่น
+      - Roboto regular  > font-weight: 400
+      - Roboto medium   > font-weight: 500
+2. Size: ขนาดของตัวอักษร
+3. Line height: ระยะห่างแนวตั้งระหว่างบรรทัดของ Text โดยมีค่าเท่ากับ Font size + Space above and below of text
+![Line height](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/typography-line-height.png)
+    * References: http://smad.jmu.edu/shen/webtype/index.html
+4. Letter spacing: ระยะห่างแนวนอนของแต่ละตัวอักษร
+
+### Setting-up
+1. แปลงไฟล์
+    * นำไฟล์ ttf หรือ otf ไปแปลงเป็น Web fonts ที่ https://www.fontsquirrel.com/tools/webfont-generator และตั้งค่า ดังนี้
+      - เลือก Expert
+      - เลือก Font formats: TrueType, WOFF และ EOT Lite
+      - เลือก Subsetting: No Subsetting
+      - Font Name Suffix ใส่เป็นค่าว่าง
+2. @font-face: Embed font เข้ามาใน CSS
+```
+@font-face {
+    font-family: Maitree-Medium;
+    src: url('#{$path-file-fonts}/maitree/maitree-medium.eot');
+    src: url('#{$path-file-fonts}/maitree/maitree-medium.eot') format('embedded-opentype'),
+        url('#{$path-file-fonts}/maitree/maitree-medium.woff') format('woff'),
+        url('#{$path-file-fonts}/maitree/maitree-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+3. @mixin: สร้าง Base component โดยใช้ Mixin
+    * ไม่มี Parameter ที่เป็น Color เพราะ ต้องการให้สอดคล้องกับ Typography anatomy
+```
+@mixin text-variant(
+  $text-display: inline-block,
+  $text-font-family: initial,
+  $text-font-size: initial,
+  $text-line-height: initial,
+  $text-letter-spacing: normal
+) {
+  // Mixins
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Helpers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Parent styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  display: $text-display;
+  font-family: $text-font-family;
+  font-size: $text-font-size;
+  font-weight: normal;
+  line-height: $text-line-height;
+  letter-spacing: $text-letter-spacing;
+  vertical-align: middle;
+  text-transform: none;
+
+  // Child element styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  &:hover,
+  &:focus {
+      text-decoration: none;
+  }
+
+  // Modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Media queries
+  // >>>>>>>>>>>>>>>>>>>>>>>
+}
+```
+4. สร้าง Text style class
+    * Text style แบ่งออกเป็น 2 รูปแบบ คือ
+        - Text body
+        - Text heading
+    * Text style แต่ละรูปแบบจะสร้าง Class โดยอิงตามขนาดของ Font size เช่น
+        - .text-primary-body-xs
+        - .text-primary-heading-xs
+        - การตั้งชื่อ extendedName ของ Class จะไม่ใช้ชื่อ Font โดยตรงแต่จะใช้ชื่อ primary, secondary, tertiary แทนเพื่อหลีกเลียงกรณีเว็บไซต์มีหลายภาษา และแต่ละภาษาใช้ Font คนละแบบ
+```
+.text-primary {
+  // Body
+  &-body {
+    // Extra small
+    // Class name: .text-primary-body-xs
+    &-xs {
+      @include text-variant(
+        $text-display: inline-block,
+        $text-font-family: $font-family-primary-medium,
+        $text-font-size: $font-size-primary-body-xs,
+        $text-line-height: $line-height-primary-body,
+        $text-color: $letter-spacing-primary-body
+      );
+    }
+
+    // Small
+    // Class name: .text-primary-body-sm
+    &-sm {
+      @include text-variant(
+        $text-display: inline-block,
+        $text-font-family: $font-family-primary-medium,
+        $text-font-size: $font-size-primary-body-sm,
+        $text-line-height: $line-height-primary-body,
+        $text-color: $letter-spacing-primary-body
+      );
+    }
+  }
+
+  // Heading
+  &-heading {
+    // Extra small
+    // Class name: .text-primary-heading-xs
+    &-xs {
+      @include text-variant(
+        $text-display: inline-block,
+        $text-font-family: $font-family-primary-medium,
+        $text-font-size: $font-size-primary-heading-xs,
+        $text-line-height: $line-height-primary-heading,
+        $text-color: $letter-spacing-primary-heading
+      );
+    }
+
+    // Small
+    // Class name: .text-primary-heading-sm
+    &-sm {
+      @include text-variant(
+        $text-display: inline-block,
+        $text-font-family: $font-family-primary-medium,
+        $text-font-size: $font-size-primary-heading-sm,
+        $text-line-height: $line-height-primary-heading,
+        $text-color: $letter-spacing-primary-heading
+      );
+    }
+  }
+}
+```
+5. สร้าง Text style variables
+    * เก็บ Text style class ไว้เป็น variable เพื่อในอนาคตอาจจะมีการเปลี่ยนแปลงใดๆ เราก็จะสามารถแทนที่ค่าใหม่ลงไปที่ variable นั้นๆ ได้เลย(Config ที่เดียว)
+```
+// Primary body
+$text-style-primary-body-xs: '.text-primary-body-xs' !default;
+$text-style-primary-body-sm: '.text-primary-body-sm' !default;
+
+// Primary Heading
+$text-style-primary-heading-xs: '.text-primary-heading-xs' !default;
+$text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
+```
+
+### Usage
+* ที่ Class selector ให้ใช้ @extend และตามด้วย Text style variable
+* เนื่องจากมีการส่งผ่าน Variable ไปที่ @extend จึงต้องใช้ #{...} ครอบไว้เพื่อบอกว่าไม่ใช่ String
+```
+.foo {
+  @extend #{$text-style-primary-body-xs};
+  color: $color-white-1;
+}
+```
+
+## Component
+### Anatomy
+
+
+### Setting-up
+
+### Usage
