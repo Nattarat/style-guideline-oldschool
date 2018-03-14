@@ -888,3 +888,26 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 ### Setting-up
 
 ### Usage
+
+
+
+
+
+## Collection
+
+
+
+
+## Calibrate font
+-
+
+-  when using difference font family
+
+
+## Start project by browser sync
+
+## CSS Processsor compile program
+
+
+
+## VSCode setting for react

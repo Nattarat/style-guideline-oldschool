@@ -93,7 +93,7 @@ html {
 
 body {
   background-color: #FFFFFF;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 16px;
   color: #111111;
   line-height: 1.3;
@@ -190,24 +190,24 @@ hr {
 }
 
 @font-face {
-  font-family: Maitree-Medium;
-  src: url("../fonts/maitree/maitree-medium.eot");
-  src: url("../fonts/maitree/maitree-medium.eot") format("embedded-opentype"), url("../fonts/maitree/maitree-medium.woff") format("woff"), url("../fonts/maitree/maitree-medium.ttf") format("truetype");
+  font-family: Roboto-Slab-Regular;
+  src: url("../fonts/roboto-slab/roboto-slab-regular.eot");
+  src: url("../fonts/roboto-slab/roboto-slab-regular.eot") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-regular.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Maitree-Bold;
-  src: url("../fonts/maitree/maitree-bold.eot");
-  src: url("../fonts/maitree/maitree-bold.eot") format("embedded-opentype"), url("../fonts/maitree/maitree-bold.woff") format("woff"), url("../fonts/maitree/maitree-bold.ttf") format("truetype");
+  font-family: Roboto-Slab-Bold;
+  src: url("../fonts/roboto-slab/roboto-slab-bold.eot");
+  src: url("../fonts/roboto-slab/roboto-slab-bold.eot") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-bold.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .text-primary-body-xs {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.3;
@@ -226,7 +226,7 @@ hr {
 
 .text-primary-body-sm, .button .button-text, .button-typography .button-text {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.3;
@@ -245,7 +245,7 @@ hr {
 
 .text-primary-body-md {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.3;
@@ -264,7 +264,7 @@ hr {
 
 .text-primary-body-lg {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 18px;
   font-weight: normal;
   line-height: 1.3;
@@ -283,7 +283,7 @@ hr {
 
 .text-primary-body-xl {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 20px;
   font-weight: normal;
   line-height: 1.3;
@@ -302,7 +302,7 @@ hr {
 
 .text-primary-heading-xs {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 24px;
   font-weight: normal;
   line-height: 1.6;
@@ -321,7 +321,7 @@ hr {
 
 .text-primary-heading-sm {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 28px;
   font-weight: normal;
   line-height: 1.6;
@@ -340,7 +340,7 @@ hr {
 
 .text-primary-heading-md {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 32px;
   font-weight: normal;
   line-height: 1.6;
@@ -359,7 +359,7 @@ hr {
 
 .text-primary-heading-lg {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 36px;
   font-weight: normal;
   line-height: 1.6;
@@ -378,7 +378,7 @@ hr {
 
 .text-primary-heading-xl {
   display: inline-block;
-  font-family: Maitree-Medium;
+  font-family: Roboto-Slab-Regular;
   font-size: 48px;
   font-weight: normal;
   line-height: 1.6;
@@ -396,7 +396,7 @@ hr {
 }
 
 .text-primary.is-bold {
-  font-family: Maitree-Bold;
+  font-family: Roboto-Slab-Bold;
 }
 
 .is-ellipsis {
