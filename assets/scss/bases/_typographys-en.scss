@@ -140,9 +140,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-body-xs,
-        $text-line-height: $line-height-primary-body,
-        $text-letter-spacing: $letter-spacing-primary-body
+        $text-font-size: $font-size-primary-body-xs-en,
+        $text-line-height: $line-height-primary-body-en,
+        $text-letter-spacing: $letter-spacing-primary-body-en
       );
     }
 
@@ -152,9 +152,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-body-sm,
-        $text-line-height: $line-height-primary-body,
-        $text-letter-spacing: $letter-spacing-primary-body
+        $text-font-size: $font-size-primary-body-sm-en,
+        $text-line-height: $line-height-primary-body-en,
+        $text-letter-spacing: $letter-spacing-primary-body-en
       );
     }
 
@@ -164,9 +164,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-body-md,
-        $text-line-height: $line-height-primary-body,
-        $text-letter-spacing: $letter-spacing-primary-body
+        $text-font-size: $font-size-primary-body-md-en,
+        $text-line-height: $line-height-primary-body-en,
+        $text-letter-spacing: $letter-spacing-primary-body-en
       );
     }
 
@@ -176,9 +176,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-body-lg,
-        $text-line-height: $line-height-primary-body,
-        $text-letter-spacing: $letter-spacing-primary-body
+        $text-font-size: $font-size-primary-body-lg-en,
+        $text-line-height: $line-height-primary-body-en,
+        $text-letter-spacing: $letter-spacing-primary-body-en
       );
     }
 
@@ -188,9 +188,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-body-xl,
-        $text-line-height: $line-height-primary-body,
-        $text-letter-spacing: $letter-spacing-primary-body
+        $text-font-size: $font-size-primary-body-xl-en,
+        $text-line-height: $line-height-primary-body-en,
+        $text-letter-spacing: $letter-spacing-primary-body-en
       );
     }
   }
@@ -203,9 +203,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-heading-xs,
-        $text-line-height: $line-height-primary-heading,
-        $text-letter-spacing: $letter-spacing-primary-heading
+        $text-font-size: $font-size-primary-heading-xs-en,
+        $text-line-height: $line-height-primary-heading-en,
+        $text-letter-spacing: $letter-spacing-primary-heading-en
       );
     }
 
@@ -215,9 +215,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-heading-sm,
-        $text-line-height: $line-height-primary-heading,
-        $text-letter-spacing: $letter-spacing-primary-heading
+        $text-font-size: $font-size-primary-heading-sm-en,
+        $text-line-height: $line-height-primary-heading-en,
+        $text-letter-spacing: $letter-spacing-primary-heading-en
       );
     }
 
@@ -227,9 +227,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-heading-md,
-        $text-line-height: $line-height-primary-heading,
-        $text-letter-spacing: $letter-spacing-primary-heading
+        $text-font-size: $font-size-primary-heading-md-en,
+        $text-line-height: $line-height-primary-heading-en,
+        $text-letter-spacing: $letter-spacing-primary-heading-en
       );
     }
 
@@ -239,9 +239,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-heading-lg,
-        $text-line-height: $line-height-primary-heading,
-        $text-letter-spacing: $letter-spacing-primary-heading
+        $text-font-size: $font-size-primary-heading-lg-en,
+        $text-line-height: $line-height-primary-heading-en,
+        $text-letter-spacing: $letter-spacing-primary-heading-en
       );
     }
 
@@ -251,9 +251,9 @@
       @include text-variant(
         $text-display: inline-block,
         $text-font-family: $font-family-primary-medium-en,
-        $text-font-size: $font-size-primary-heading-xl,
-        $text-line-height: $line-height-primary-heading,
-        $text-letter-spacing: $letter-spacing-primary-heading
+        $text-font-size: $font-size-primary-heading-xl-en,
+        $text-line-height: $line-height-primary-heading-en,
+        $text-letter-spacing: $letter-spacing-primary-heading-en
       );
     }
   }

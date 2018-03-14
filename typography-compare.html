@@ -73,33 +73,33 @@
   <meta itemprop="description" content="Description_Detail_less_than_200_characters"/>
   <meta itemprop="image" content="https://example.com/GooglePlus_Cover_Timeline_Image.jpg"/>
   -->
+
+  <style>
+    .container-compare {
+      display: flex;
+      width: 100%;
+    }
+
+    .container-compare-inner {
+      width: 50%;
+    }
+
+    iframe {
+      overflow: auto;
+      width: 100%;
+      height: calc(100vh - 8px);
+    }
+  </style>
 </head>
 <body>
-  <h1>Heading 1</h1>
-  <h2>Heading 2</h2>
-  <h3>Heading 3</h3>
-  <h4>Heading 4</h4>
-  <h5>Heading 5</h5>
-  <h6>Heading 6</h6>
-  <img src="./assets/images/contents/home-banner.jpg" alt="Banner">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem commodi facilis minus ipsum molestias vero molestiae, reiciendis non aliquid perferendis voluptates nihil aliquam dolores excepturi doloremque fugiat cumque. Facere, aspernatur.</p>
-  <a href="#" target="_blank">Link</a>
-  <div>Div</div>
-  <ul>
-    <li>Unlist item</li>
-    <li>Unlist item</li>
-    <li>Unlist item</li>
-  </ul>
-  <ol>
-    <li>Orderlist item</li>
-    <li>Orderlist item</li>
-    <li>Orderlist item</li>
-  </ol>
-  <button class="button" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Button</span>
-    </span>
-  </button>
+  <div class="container-compare">
+    <div class="container-compare-inner">
+      <iframe src="http://localhost:3000/typography.html"></iframe>
+    </div>
+    <div class="container-compare-inner">
+      <iframe src="http://localhost:3000/typography-en.html"></iframe>
+    </div>
+  </div>
 
   <script src="./assets/js/jquery/jquery.min.js"></script>
   <script src="./assets/js/is_js/is.min.js"></script>

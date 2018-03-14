@@ -17,10 +17,10 @@ html {
 body {
   background-color: $color-white-1;
   font-family: $font-family-primary-medium-en;
-  font-size: $font-size-primary-body-md;
+  font-size: $font-size-primary-body-md-en;
   color: $color-gray-4;
-  line-height: $line-height-primary-body;
-  letter-spacing: $letter-spacing-primary-body;
+  line-height: $line-height-primary-body-en;
+  letter-spacing: $letter-spacing-primary-body-en;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

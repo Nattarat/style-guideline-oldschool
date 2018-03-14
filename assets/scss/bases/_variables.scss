@@ -51,29 +51,53 @@ $font-family-primary-bold-en: Roboto-Slab-Bold !default;
 
 // Font sizes
 // ============================================================
-// Primary body
+// Primary body - Thai
 $font-size-primary-body-xs: 12px !default;
 $font-size-primary-body-sm: 14px !default;
 $font-size-primary-body-md: 16px !default;
 $font-size-primary-body-lg: 18px !default;
 $font-size-primary-body-xl: 20px !default;
 
-// Primary heading
+// Primary body - English
+$font-size-primary-body-xs-en: 12px !default;
+$font-size-primary-body-sm-en: 14px !default;
+$font-size-primary-body-md-en: 16px !default;
+$font-size-primary-body-lg-en: 18px !default;
+$font-size-primary-body-xl-en: 20px !default;
+
+// Primary heading - Thai
 $font-size-primary-heading-xs: 24px !default;
 $font-size-primary-heading-sm: 28px !default;
 $font-size-primary-heading-md: 32px !default;
 $font-size-primary-heading-lg: 36px !default;
 $font-size-primary-heading-xl: 48px !default;
 
+// Primary heading - English
+$font-size-primary-heading-xs-en: 24px !default;
+$font-size-primary-heading-sm-en: 28px !default;
+$font-size-primary-heading-md-en: 32px !default;
+$font-size-primary-heading-lg-en: 36px !default;
+$font-size-primary-heading-xl-en: 48px !default;
+
 // Line heights
 // ============================================================
+// Thai
 $line-height-primary-body: 1.3 !default;
 $line-height-primary-heading: 1.6 !default;
 
+// English
+$line-height-primary-body-en: 1.3 !default;
+$line-height-primary-heading-en: 1.6 !default;
+
 // Letter spacings
 // ============================================================
+// Thai
 $letter-spacing-primary-body: normal !default;
 $letter-spacing-primary-heading: normal !default;
+
+// English
+$letter-spacing-primary-body-en: normal !default;
+$letter-spacing-primary-heading-en: normal !default;
 
 // Text styles
 // your stylesheets. Example: @extend #{$text-style-primary-body-xs};

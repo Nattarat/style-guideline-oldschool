@@ -883,31 +883,20 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 
 ## Component
 ### Anatomy
-
-
 ### Setting-up
-
 ### Usage
-
-
-
-
 
 ## Collection
 
-
-
-
 ## Calibrate font
--
+* แนวทางการจัดการเว็บไซต์หลายภาษา กรณีมีการใช้ Font family ของแต่ละภาษาเป็นคนละชนิดกัน
+* ปัญหาที่เกิดขึ้น คือ Font size, Line height, Letter spacing ของแต่ละ Font family จะแตกต่างกัน ทำให้ Design พัง ตัวอย่างเช่น Design ที่ทำออกมาเพื่อ Font family ภาษาไทย เมื่อเปลี่ยนไปใช้ Font family ภาษาอังกฤษ ที่ Font size, Line height, Letter spacing เดียวกัน กลับแสดงผลไม่เหมือนกัน จึงเป็นสาเหตุให้เราต้องทำการเทียบค่า Font size, Line height, Letter spacing ของ Font family ทั้ง 2 ชนิดใหม่ เพื่อให้ได้การแสดงผลเดียวกัน
 
--  when using difference font family
+###
 
 
 ## Start project by browser sync
 
 ## CSS Processsor compile program
-
-
 
 ## VSCode setting for react
