@@ -7,10 +7,15 @@
 // ==================================================================================================
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 
+@-ms-viewport {
+  width: device-width;
+}
+
 html {
   touch-action: manipulation; // remove the 300-350ms tap delay
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-y: auto;
+  -ms-overflow-style: scrollbar;
   text-rendering: optimizeLegibility;
 }
 

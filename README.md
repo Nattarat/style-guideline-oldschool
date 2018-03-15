@@ -572,6 +572,15 @@ icon-social-facebook-square@2x.png
 
     .contact {...}
     ```
+  * vendors: เก็บไฟล์สไตล์ของ CSS Framework ที่นำมาใช้แค่บางส่วน ดูรายละเอียดเพิ่มเติมที่ [How to using other CSS framework in project](#how-to-using-other-css-framework-in-project)
+    - สร้าง Parent class เป็นชื่อ CSS Framework นั้นๆ เช่น
+    ```
+    .bootstrap {...}
+
+    .semantic-ui {...}
+
+    .bulma {...}
+    ```
   * main: ไฟล์รวมสไตล์ทั้งหมดสำหรับ Compile มาเป็น main.css เพื่อนำไปใช้ในเว็บไซต์
 
 ### videos
@@ -892,14 +901,50 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 * แนวทางการจัดการเว็บไซต์หลายภาษา กรณีมีการใช้ Font family ของแต่ละภาษาเป็นคนละชนิดกัน
 * ปัญหาที่เกิดขึ้น คือ Font size, Line height, Letter spacing ของแต่ละ Font family จะแตกต่างกัน ทำให้ Design พัง ตัวอย่างเช่น Design ที่ทำออกมาเพื่อ Font family ภาษาไทย เมื่อเปลี่ยนไปใช้ Font family ภาษาอังกฤษ ที่ Font size, Line height, Letter spacing เดียวกัน กลับแสดงผลไม่เหมือนกัน จึงเป็นสาเหตุให้เราต้องทำการเทียบค่า Font size, Line height, Letter spacing ของ Font family ทั้ง 2 ชนิดใหม่ เพื่อให้ได้การแสดงผลเดียวกัน
 
-###
+### Setting-up
+1. นำ Font family ของอีกภาษาเพิ่มเข้าไปที่ fonts folder
+2. ที่ scss/bases สร้างไฟล์ _variables-en.scss ทำตามขั้นตอนดังนี้
+    * นำ Variables ของ Typography ได้แก่ Font families, Font sizes, Line heights, Letter spacings มาใส่
+    * นำ !default ที่เป็น Flag สำหรับแสดงค่าตั้งต้นของ Variables ออก เพื่อเราจะเปลี่ยนค่า Variables ใหม่แทนค่าเดิมได้
+    * Import ไฟล์ _variables-en.scss เข้าไปที่ main-en.css โดยวางต่อจาก Variables เดิม
+    ```
+    @import 'bases/variables';
+    @import 'bases/variables-en'; // Overwrite typography default variables
+    ```
+    * ตั้งค่า Variables ของ English Typography ใหม่
+    ```
+    // Font families
+    // ============================================================
+    $font-family-primary-medium: Roboto-Slab-Regular;
+    $font-family-primary-bold: Roboto-Slab-Bold;
 
+    // Font sizes
+    // ============================================================
+    // Primary body
+    $font-size-primary-body-xs: 12px;
+    $font-size-primary-body-sm: 14px;
+    $font-size-primary-body-md: 16px;
+    $font-size-primary-body-lg: 18px;
+    $font-size-primary-body-xl: 20px;
 
-## Start project by browser sync
+    // Primary heading
+    $font-size-primary-heading-xs: 24px;
+    $font-size-primary-heading-sm: 28px;
+    $font-size-primary-heading-md: 32px;
+    $font-size-primary-heading-lg: 36px;
+    $font-size-primary-heading-xl: 48px;
 
-## CSS Processsor compile program
+    // Line heights
+    // ============================================================
+    $line-height-primary-body: 1.3;
+    $line-height-primary-heading: 1.6;
 
-## VSCode setting for react
+    // Letter spacings
+    // ============================================================
+    $letter-spacing-primary-body: normal;
+    $letter-spacing-primary-heading: normal;
+    ```
+3. เปิดหน้า typography-compare.html เพื่อทำการเปรียบเทียบและปรับค่า Variables ของ English Typography ใหม่
 
 ## How to using other CSS framework in project
 * ปัญหาของการนำ CSS framework มาใช้ในโปรเจค ได้แก่
@@ -909,4 +954,56 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 * แนวทางการนำ CSS framework มาใช้ในโปรเจค เพื่อหลีกเลี่ยงปัญหาต่างๆ คือ การแบ่งส่วน Class ที่จะใช้ออกมาใส่ไว้ในโปรเจคของเรา (ไม่เอามาทั้งหมด)
 
 ### Setting-up
-1. ไปที่ Repository ของ CSS Framework แล้วหาไฟล์ CSS ที่ไม่ Minified ไว้
+1. ไปที่ Repository ของ CSS Framework แล้วหาไฟล์ CSS ที่ไม่ Minified และทำการ Copy มาใส่ในโปรเจค ตัวอย่างเช่น
+    * ต้องการใช้งาน Grids ของ Bootstrap ไปที่ https://github.com/twbs/bootstrap/tree/v4-dev/dist/css
+    * Copy เฉพาะส่วนของ Grids
+2. ที่ scss/vendors ให้สร้างไฟล์ SCSS ตามชื่อ CSS Framework เช่น _bootstrap.scss และนำ CSS ที่ทำการ Copy มาวางลงไป
+    * ให้เขียน Comment ที่หัว โดยมีรายละเอียด ดังนี้
+      - ชื่อ CSS Framework และตัวเลข Version
+      - ชื่อ Element/Component Class และ GitHub Link ของ CSS Framework
+      ```
+      * Bootstrap v4.0.0
+        - Grids (https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap-grid.css)
+      ```
+    * สร้าง Class wrapper เป็นชื่อของ CSS Framework นั้นๆ ครอบ CSS ที่ Copy มาเพื่อป้องกันการซ้ำซ้อนกันของ Class name
+      ```
+      .bootstrap {
+        // Classes from Bootstrap
+      }
+      ```
+3. ที่ main.scss ให้ import ไฟล์ไว้ลำดับแรกสุด เพื่อในอนาคตอาจจะมีความจำเป็นต้อง Overwrite class ของ CSS Framework ที่นำมาใช้
+```
+// Vendors
+// ============================================================
+@import 'vendors/bootstrap';
+
+// Helpers > Mixins
+// ============================================================
+@import '...'
+
+// Bases
+// ============================================================
+@import '...'
+
+// Helpers > Utilities
+// ============================================================
+@import '...'
+
+// Components
+// ============================================================
+@import '...'
+
+// Layouts
+// ============================================================
+@import 'layouts/topbar';
+
+// Pages
+// ============================================================
+@import '...'
+```
+
+## Start project by browser sync
+
+## CSS Processsor compile program
+
+## VSCode setting for react
