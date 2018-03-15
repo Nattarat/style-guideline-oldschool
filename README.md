@@ -128,6 +128,11 @@ $primary-border-radius: 5px;
   // Helpers
   @extend .smaple-helper;
 
+  // Animation
+  // this group properties can use mixins instead pure properties
+  transition: all 0.3s $animation-timing-elastic;
+  transform: translateX(15px);
+
   // Visual formatting (display, positioning)
   position: absolute;
   z-index: 1;
@@ -148,6 +153,9 @@ $primary-border-radius: 5px;
 
   // Border
   border: 1px solid $color-gray-1;
+
+  // Box shadow
+  box-shadow: $box-shadow-1;
 
   // Font, Text
   .text-element {
@@ -618,6 +626,7 @@ icon-social-facebook-square@2x.png
 * 2560 px > iMac
 
 ### @media Pattern
+* ถ้า @media มีตั้งแต่ 2 ค่าขึ้นไป ให้เคาะบรรทัดตั้งแต่ค่าที่ 2 ลงมา
 ```
 // Min width
 @media (min-width: $breakpoint-mobile-lg) {
@@ -630,7 +639,22 @@ icon-social-facebook-square@2x.png
 }
 
 // Min-Max width
-@media (min-width: $breakpoint-mobile-lg) and (max-width: $breakpoint-tablet-lg) {
+@media (min-width: $breakpoint-mobile-lg)
+  and (max-width: $breakpoint-tablet-lg) {
+  ...
+}
+
+// Min-Max width & Portrait orientation
+@media (min-width: $breakpoint-tablet-sm)
+  and (max-width: $breakpoint-tablet-lg)
+  and (orientation: portrait) {
+  ...
+}
+
+// Min-Max width & Landscape orientation
+@media (min-width: $breakpoint-tablet-sm)
+  and (max-width: $breakpoint-tablet-lg)
+  and (orientation: landscape) {
   ...
 }
 ```
@@ -891,7 +915,43 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 ```
 
 ## Component
+* Component เป็นสิ่งที่มีลักษณะคล้าย LEGO มีรูปร่างหลายแบบ โดยเมื่อนำแต่ละแบบมาประกอบเข้าด้วยกันก็จะเกิดเป็นชิ้นงาน
+* Component แต่ละแบบเมื่อนำมาประกอบเข้าด้วยกันก็จะเกิดเป็นโครงสร้าง และเมื่อนำโครงสร้างต่างๆ มาประกอบเข้าด้วยกันตามดีไซน์ก็จะเกิดเป็น Website
+* ข้อดีของ Component คือ มีลักษณะเป็นชิ้นๆ และแต่ละแบบจะไม่มีความเกี่ยวข้องกัน ดังนั้นเมื่อมีการปรับแก้ไข/เพิ่มเติมโครงสร้าง เราไม่จำเป็นต้องรื้อโครงสร้างทั้งหมดใหม่ตั้งแต่ต้น แต่เราสามารถแก้ไข/เพิ่มเติมเฉพาะส่วนเท่านั้นได้ ทำให้สามารถเข้าถึงปัญหาและประหยัดเวลาในการแก้ไข/เพิ่มเติมได้อย่างมีประสิทธิภาพมากขึ้น
+
 ### Anatomy
+* Structure
+  - โครงสร้างพื้นฐาน ที่เมื่อกำหนดค่า CSS Properties ต่างๆ เข้าไป จะแสดงรูปร่างออกมา
+  - การวิเคราะห์โครงสร้างไม่ได้มีหลักการตายตัว โดยพื้นฐานให้ใช้การสังเกตความสัมพันธ์ระหว่าง UI กับ CSS Properties แล้วทำการลิสต์ออกมา
+  - ตัวอย่างโครงสร้าง Button
+
+  ![Button structure](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/button-structure.png)
+
+  จะประกอบด้วย CSS Properties ดังนี้
+    - display
+    - min-width
+    - height
+    - padding
+    - background-color
+    - border-style
+    - border-width
+    - border-color
+    - border-radius
+    - box-shadow
+
+* Detail
+  - รายละเอียดที่อยู่ภายในโครงสร้าง เช่น Text, Image, Icon
+  - การวิเคราะห์รายละเอียดจำเป็นต้องอ้างอิงกับ UI ที่ได้รับจากดีไซน์เนอร์ เพราะเราสามารถจำลองรายละเอียดได้แค่พื้นฐานเท่าที่จำเป็นเท่านั้น
+  - เมื่อวิเคราะห์แล้วจะสามารถอกแบบ Child element class ได้
+
+* Size
+  - ขนาด
+
+* State
+  - การเปลี่ยนแปลงตามสภาวะ
+
+References: https://www.designil.com/button-design-ui-ux.html
+
 ### Setting-up
 ### Usage
 
@@ -1007,3 +1067,31 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 ## CSS Processsor compile program
 
 ## VSCode setting for react
+
+## Git comment
+* ในกรณีทำโปรเจคร่วมกับทีมที่ประกอบด้วย HTML/CSS Editor, Frontend(Script) และ Backend ให้ทำ Label ด้านหน้าของ Comment เพื่อแจ้งให้คนในทีมทราบด้วยว่าแก้ไขอะไรไป
+* Comment ให้เขียนด้วย Lowercase ทั้งหมด
+  - HTML
+    ```
+    git commit -m "html: edit login form"
+    ```
+  - CSS
+    ```
+    git commit -m "css: change title size"
+    ```
+  - HTML และ CSS
+    ```
+    git commit -m "html/css: edit about page"
+    ```
+  - Content เช่น Image, Icon, Font, Document
+    ```
+    git commit -m "content: add facebook icon"
+    ```
+  - JS/Plugin/Library
+    ```
+    git commit -m "js: add swiperjs to home page"
+    ```
+* Comment กรณีมีหลายๆ เคสรวมกันให้ใช้ | ขั้นแต่ละเคสไว้
+```
+git commit -m "html/css: edit about page | content: add facebook icon | js: add swiperjs to home page"
+```
