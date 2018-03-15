@@ -900,3 +900,13 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 ## CSS Processsor compile program
 
 ## VSCode setting for react
+
+## How to using other CSS framework in project
+* ปัญหาของการนำ CSS framework มาใช้ในโปรเจค ได้แก่
+  - ใช้ Class ของ CSS Framework แค่บางส่วน (น้อยกว่า 50%) เนื่องจาก Designer ไม่ได้ออกแบบโดยใช้ CSS Framework เป็น Base
+  - เขียนทับ Class ของ CSS Framework ที่นำมาใช้ เพื่อให้เข้ากันกับ Design ทำให้เกิดความซับซ้อนของ Class โดยไม่จำเป็น
+  - CSS Framework มักจะเอาชื่อ Class ที่มีความเป็น Conventional ที่ดีไปใช้หมดแล้ว ทำให้ยากต่อการตั้งชื่อ Class ใหม่และมีโอกาสที่จะตั้งชื่อแล้วซ้ำกัน
+* แนวทางการนำ CSS framework มาใช้ในโปรเจค เพื่อหลีกเลี่ยงปัญหาต่างๆ คือ การแบ่งส่วน Class ที่จะใช้ออกมาใส่ไว้ในโปรเจคของเรา (ไม่เอามาทั้งหมด)
+
+### Setting-up
+1. ไปที่ Repository ของ CSS Framework แล้วหาไฟล์ CSS ที่ไม่ Minified ไว้
