@@ -982,7 +982,7 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
   - ข้อดีของออฟชั่นกลาง เมื่อมีการเปลี่ยนแปลงค่าจะสามารถแก้ไขได้ที่จุดเดียว
   - ตัวอย่าง Button option
 
-  ![Button modifier](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/button-modifier.png)
+  ![Button modifier](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/button-modifier.jpg)
 
   จะประกอบด้วย Modifier class ดังนี้
     - .is-size-sm : ปุ่มขนาดเล็ก
