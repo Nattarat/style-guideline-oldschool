@@ -712,7 +712,8 @@ icon-social-facebook-square@2x.png
     }
 
     .foo-bar-ha {
-      @media (min-width: $breakpoint-mobile-lg) and (max-width: $breakpoint-tablet-lg) {
+      @media (min-width: $breakpoint-mobile-lg)
+      and (max-width: $breakpoint-tablet-lg) {
         border-color: $color-red-2;
       }
     }
@@ -940,21 +941,302 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
     - box-shadow
 
 * Detail
-  - รายละเอียดที่อยู่ภายในโครงสร้าง เช่น Text, Image, Icon
-  - การวิเคราะห์รายละเอียดจำเป็นต้องอ้างอิงกับ UI ที่ได้รับจากดีไซน์เนอร์ เพราะเราสามารถจำลองรายละเอียดได้แค่พื้นฐานเท่าที่จำเป็นเท่านั้น
-  - เมื่อวิเคราะห์แล้วจะสามารถอกแบบ Child element class ได้
+  - รายละเอียดที่อยู่ภายในโครงสร้าง เช่น Text, Icon
+  - การวิเคราะห์รายละเอียดจำเป็นต้องอ้างอิงกับ UI ที่ได้รับจากดีไซน์เนอร์ เพราะ เราสามารถจำลองรายละเอียดได้แค่พื้นฐานเท่าที่จำเป็นเท่านั้น
+  - เมื่อวิเคราะห์แล้วจะสามารถอกแบบ Child element class ได้ ซึ่งการวิเคราะห์จะแตกต่างกันไปตามประสบการณ์และนิสัยของ HTML/CSS Editor นั้นๆ
+  - ตัวอย่างรายละเอียด Button
+
+  ![Button detail](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/button-detail.png)
+
+  จะประกอบด้วย Child element class ดังนี้
+    - .button-body : เป็นส่วนที่ใช้ควบคุม Alignment
+    - .button-icon : ไอค่อน
+    - .button-text : ตัวอักษร
 
 * Size
   - ขนาด
+  - ตัวอย่างขนาด Button
+
+  ![Button size](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/button-size.png)
+
+  จะประกอบด้วย Modifier class ดังนี้
+    - .is-size-sm
+    - .is-size-md : ขนาด default
+    - .is-size-lg
 
 * State
-  - การเปลี่ยนแปลงตามสภาวะ
+  - สภาวะกลางสำหรับเปลี่ยนแปลง Structure และ Detail
+  - สภาวะกลาง หมายถึง สภาวะที่ Component ใช้ร่วมกัน เช่น :hover, :focus, :active, disabled, loading
+  - ข้อดีของสภาวะกลาง เมื่อมีการเปลี่ยนแปลงค่าจะสามารถแก้ไขได้ที่จุดเดียว
+  - ตัวอย่างสภาวะ Button
+
+  ![Button state](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/button-state.png)
+
+  จะประกอบด้วย State class ดังนี้
+    - .is-disabled : ปุ่มโดนห้ามมีแอคชั่นใดๆ
+    - .is-loading : ปุ่มแสดงการโหลดเพื่อทำงานส่วนหนึ่งให้เสร็จ
+
+* Modifier
+  - ออฟชั่นกลางสำหรับเปลี่ยนแปลง Structure และ Detail
+  - ออฟชั่นกลาง หมายถึง ออฟชั่นที่ Component มีการใช้ร่วมกัน เช่น ขนาด
+  - ข้อดีของออฟชั่นกลาง เมื่อมีการเปลี่ยนแปลงค่าจะสามารถแก้ไขได้ที่จุดเดียว
+  - ตัวอย่าง Button option
+
+  ![Button modifier](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/button-modifier.png)
+
+  จะประกอบด้วย Modifier class ดังนี้
+    - .is-size-sm : ปุ่มขนาดเล็ก
+    - .is-size-lg : ปุ่มขนาดใหญ่
+    - .is-flexible : ปุ่มที่กว้างตาม Text, Icon ที่อยู่ภายในโครงสร้าง
+    - .is-fluid : ปุ่มที่กว้างตาม Container
 
 References: https://www.designil.com/button-design-ui-ux.html
 
 ### Setting-up
-### Usage
 
+ตัวอย่างการสร้าง Button component
+
+1. ที่ scss/components สร้างไฟล์ _button.scss
+2. ออกแบบ Structure และ Detail
+    * HTML tag และ CSS Class
+    * Comment ไว้เพื่อป้องกันการลืมโครงสร้าง และทำให้คนในทีมมาหยิบไปใช้ได้ง่าย
+    ```
+    // Structure & Detail
+    // ============================================================
+    /*
+    <button class="button" type="button">
+      <span class="button-body">
+        <img class="button-icon" src="..." alt="Icon">
+        <span class="button-text">...</span>
+      </span>
+    </button>
+
+    <a class="button" href="#">
+      <span class="button-body">
+        <img class="button-icon" src="..." alt="Icon">
+        <span class="button-text">...</span>
+      </span>
+    </a>
+    */
+    ```
+3. สร้าง Mixin
+    * ชื่อ Mixin ของ Component ให้เริ่มต้นชื่อ Component ขั้นด้วย hyphen และตามด้วย variant
+    ```
+    @mixin button-variant(...) {}
+    ```
+    * Parameters ที่กำหนดใน Mixin จะมีความสอดคล้องกับ Structure โดยมีหลักการ คือ สร้าง Parameters ให้กับ CSS Properties ที่มีการเปลี่ยนแปลงค่าบ่อยๆ เช่น Background color, Button text color เป็นต้น
+    * สร้าง CSS class/pseudo class สำหรับ Size, State และ Modifier
+    ```
+    // Mixins
+    // ============================================================
+    @mixin button-variant(
+      // Body
+      $button-width: $button-width-default,
+      $button-height: $button-height-default,
+      $button-height-small: $button-height-sm,
+      $button-height-large: $button-height-lg,
+      $button-padding: 0 10px,
+      $button-background-color: $color-gray-3,
+      $button-border-width: 0,
+      $button-border-color: transparent,
+      $button-border-radius: $border-radiuse-xs,
+      $button-box-shadow: 0 0 0 rgba(0, 0, 0, 0),
+
+      // Body hover
+      $button-background-color-hover: $color-gray-2,
+      $button-border-width-hover: 0,
+      $button-border-color-hover: transparent,
+
+      // Text
+      $button-text-style: $text-style-primary-body-sm,
+      $button-text-style-small: $text-style-primary-body-xs,
+      $button-text-style-large: $text-style-primary-body-lg,
+      $button-text-color: $color-white-1,
+
+      // Text hover
+      $button-text-color-hover: $color-white-1,
+
+      // Button icon
+      $button-icon-spacing-right: 10px,
+      $button-icon-spacing-left: 10px
+    ) {
+      // Mixins
+      // >>>>>>>>>>>>>>>>>>>>>>>
+
+      // Helpers
+      // >>>>>>>>>>>>>>>>>>>>>>>
+
+      // Parent styles
+      // >>>>>>>>>>>>>>>>>>>>>>>
+      display: inline-block;
+      min-width: $button-width;
+      height: $button-height;
+      padding: $button-padding;
+      background-color: $button-background-color;
+      border-style: solid;
+      border-width: $button-border-width;
+      border-color: $button-border-color;
+      border-radius: $button-border-radius;
+      vertical-align: middle;
+      box-shadow: $button-box-shadow;
+      cursor: pointer;
+
+      // Child element styles
+      // >>>>>>>>>>>>>>>>>>>>>>>
+      .button-body {
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      }
+
+      .button-icon {
+        display: inline-block;
+        vertical-align: middle;
+
+        &.is-text-left {
+          margin-left: $button-icon-spacing-left;
+        }
+
+        &.is-text-right {
+          margin-right: $button-icon-spacing-right;
+        }
+      }
+
+      .button-text {
+        @extend #{$button-text-style};
+        color: $button-text-color;
+      }
+
+      // States
+      // >>>>>>>>>>>>>>>>>>>>>>>
+      &:hover {
+        background-color: $button-background-color-hover;
+        border-width: $button-border-width-hover;
+        border-color: $button-border-color-hover;
+        text-decoration: none;
+
+        .button-text {
+          color: $button-text-color-hover;
+        }
+      }
+
+      &:active,
+      &:focus {
+        box-shadow: $button-box-shadow;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      // Modifiers
+      // >>>>>>>>>>>>>>>>>>>>>>>
+      // Sizes
+      &.is-size-sm {
+        height: $button-height-small;
+
+        .button-text {
+          @extend #{$button-text-style-small};
+        }
+      }
+
+      &.is-size-lg {
+        height: $button-height-large;
+
+        .button-text {
+          @extend #{$button-text-style-large};
+        }
+      }
+
+      // Structures
+      &.is-flexible {
+        min-width: 1px;
+      }
+
+      &.is-fluid {
+        width: 100%;
+      }
+
+      // States with modifiers
+      // >>>>>>>>>>>>>>>>>>>>>>>
+    }
+    ```
+
+### Usage
+* ตัวอย่างการสร้าง Default button คือ ปุ่มที่ใช้ค่า Default ของ Mixin ทั้งหมด
+  - ที่ Class selector ให้ใช้ @include และตามด้วยชื่อ mixin โดยไม่ต้องใส่ Parameter ลงไปในวงเล็บ
+  ```
+  // Default
+  // ------------------------------------------------
+  .button {
+    // Mixins
+    // >>>>>>>>>>>>>>>>>>>>>>>
+    @include button-variant();
+
+    // Helpers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Parent styles
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Child element styles
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // States
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Modifiers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // States with modifiers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Media queries
+    // >>>>>>>>>>>>>>>>>>>>>>>
+  }
+  ```
+* ตัวอย่างการสร้าง Primary button คือ ปุ่มที่มีสีต่างจาก Default
+  - ที่ Class selector ให้ใช้ @include และตามด้วยชื่อ mixin จากนั้นใส่ Parameter และตัวแปรสี Primary ที่ต้องการเข้าไป
+  ```
+  // Primary
+  // ------------------------------------------------
+  .button-primary {
+    // Mixins
+    // >>>>>>>>>>>>>>>>>>>>>>>
+    @include button-variant(
+      $button-background-color: $color-pink-1,
+      $button-background-color-hover: $color-pink-2
+    );
+
+    // Helpers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Parent styles
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Child element styles
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // States
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Modifiers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // States with modifiers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Media queries
+    // >>>>>>>>>>>>>>>>>>>>>>>
+  }
+  ```
+  - การนำ Component มาใช้ในรูปแบบ mixin จะมีข้อดีดังนี้
+    - สืบทอดค่า Default CSS Properties, Child/States/Modifiers class ต่างๆ มาได้ทั้งหมด
+    - สามารถเพิ่ม Child/States/Modifiers class ที่มีเฉพาะ Component ตัวหนึ่งๆ ได้ โดยไม่กระทบกับ Component อื่นๆ ที่ใช้ mixins ตัวเดียวกัน
 ## Collection
 
 ## Calibrate font

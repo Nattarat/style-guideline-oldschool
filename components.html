@@ -75,54 +75,57 @@
   -->
 
   <style>
-    .paragraph-box {
-      min-height: 100px;
-      padding: 15px 30px;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #EEEEEE;
+    .partition-line {
+      position: relative;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-top: 0;
+    }
+
+    .partition-line:before {
+      content: ' ';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 1px;
+      background-color: #EEEEEE;
     }
   </style>
 </head>
 <body>
-  <div class="paragraph-box">
-    <p class="text-primary-body-xs">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-body-sm">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-body-md">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-body-lg">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-body-xl">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-heading-xs">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-heading-sm">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-heading-md">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-heading-lg">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
-
-  <div class="paragraph-box">
-    <p class="text-primary-heading-xl">ลินุกซ์อัปโหลด โมไบล์โน้ตบุค ชิปโทรจันไลเซนส์ซอร์ส แชนเนลพาเนลเรียลไทม์ทรานแซ็กชั่น</p>
-  </div>
+  <button class="button is-size-sm" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Small size</span>
+    </span>
+  </button>
+  <button class="button" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Default size</span>
+    </span>
+  </button>
+  <button class="button is-size-lg" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Large size</span>
+    </span>
+  </button>
+  <hr class="partition-line">
+  <button class="button is-flexible" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Flexible</span>
+    </span>
+  </button>
+  <hr class="partition-line">
+  <button class="button is-fluid" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Fluid</span>
+    </span>
+  </button>
+  <hr class="partition-line">
+  <button class="button-primary" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Primary button</span>
+    </span>
+  </button>
 
   <script src="./assets/js/jquery/jquery.min.js"></script>
   <script src="./assets/js/is_js/is.min.js"></script>

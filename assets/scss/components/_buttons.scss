@@ -2,7 +2,7 @@
 // ==================================================================================================
 //
 // Buttons
-// * HTML Structure
+// * Structure & Detail
 // * Mixins
 // * Contextual variations
 //   - Default
@@ -13,12 +13,11 @@
 
 @charset 'utf-8';
 
-// HTML Structure
+// Structure & Detail
 // ============================================================
 /*
 <button class="button" type="button">
   <span class="button-body">
-    <span class="button-icon">...</span>
     <img class="button-icon" src="..." alt="Icon">
     <span class="button-text">...</span>
   </span>
@@ -26,7 +25,6 @@
 
 <a class="button" href="#">
   <span class="button-body">
-    <span class="button-icon">...</span>
     <img class="button-icon" src="..." alt="Icon">
     <span class="button-text">...</span>
   </span>
@@ -39,6 +37,8 @@
   // Body
   $button-width: $button-width-default,
   $button-height: $button-height-default,
+  $button-height-small: $button-height-sm,
+  $button-height-large: $button-height-lg,
   $button-padding: 0 10px,
   $button-background-color: $color-gray-3,
   $button-border-width: 0,
@@ -53,6 +53,8 @@
 
   // Text
   $button-text-style: $text-style-primary-body-sm,
+  $button-text-style-small: $text-style-primary-body-xs,
+  $button-text-style-large: $text-style-primary-body-lg,
   $button-text-color: $color-white-1,
 
   // Text hover
@@ -135,18 +137,28 @@
     outline: none;
   }
 
-  // States with modifiers
+  // Modifiers
   // >>>>>>>>>>>>>>>>>>>>>>>
-  &.is-primary {
-    background-color: $color-pink-1;
+  // Sizes
+  &.is-size-sm {
+    height: $button-height-small;
+
+    .button-text {
+      @extend #{$button-text-style-small};
+    }
   }
 
-  &.is-secondary {
-    background-color: $color-blue-1;
+  &.is-size-lg {
+    height: $button-height-large;
+
+    .button-text {
+      @extend #{$button-text-style-large};
+    }
   }
 
-  &.is-padding-blank {
-    padding: 0;
+  // Structures
+  &.is-flexible {
+    min-width: 1px;
   }
 
   &.is-fluid {
@@ -229,37 +241,14 @@
 // Chrome Android
 .chrome-mobile {}
 
-// Typography
+// Primary
 // ------------------------------------------------
-.button-typography {
+.button-primary {
   // Mixins
   // >>>>>>>>>>>>>>>>>>>>>>>
   @include button-variant(
-    // Body
-    $button-width: auto,
-    $button-height: auto,
-    $button-padding: 0,
-    $button-background-color: transparent,
-    $button-border-width: 0,
-    $button-border-color: transparent,
-    $button-border-radius: initial,
-    $button-box-shadow: 0 0 0 rgba(0, 0, 0, 0),
-
-    // Body hover
-    $button-background-color-hover: transparent,
-    $button-border-width-hover: 0,
-    $button-border-color-hover: initial,
-
-    // Text
-    $button-text-style: $text-style-primary-body-sm,
-    $button-text-color: $color-gray-4,
-
-    // Text hover
-    $button-text-color-hover: $color-gray-4,
-
-    // Button icon
-    $button-icon-spacing-right: 0,
-    $button-icon-spacing-left: 0
+    $button-background-color: $color-pink-1,
+    $button-background-color-hover: $color-pink-2
   );
 
   // Helpers

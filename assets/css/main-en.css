@@ -1719,7 +1719,7 @@ hr {
   font-weight: normal;
   font-style: normal; }
 
-.text-primary-body-xs {
+.text-primary-body-xs, .button.is-size-sm .button-text, .button-primary.is-size-sm .button-text {
   display: inline-block;
   font-family: Roboto-Slab-Regular;
   font-size: 12px;
@@ -1728,12 +1728,12 @@ hr {
   letter-spacing: normal;
   vertical-align: middle;
   text-transform: none; }
-  .text-primary-body-xs:hover, .text-primary-body-xs:focus {
+  .text-primary-body-xs:hover, .button.is-size-sm .button-text:hover, .button-primary.is-size-sm .button-text:hover, .text-primary-body-xs:focus, .button.is-size-sm .button-text:focus, .button-primary.is-size-sm .button-text:focus {
     text-decoration: none; }
-  .text-primary-body-xs.is-uppercase {
+  .text-primary-body-xs.is-uppercase, .button.is-size-sm .is-uppercase.button-text, .button-primary.is-size-sm .is-uppercase.button-text {
     text-transform: uppercase; }
 
-.text-primary-body-sm, .button .button-text, .button-typography .button-text {
+.text-primary-body-sm, .button .button-text, .button-primary .button-text {
   display: inline-block;
   font-family: Roboto-Slab-Regular;
   font-size: 14px;
@@ -1742,9 +1742,9 @@ hr {
   letter-spacing: normal;
   vertical-align: middle;
   text-transform: none; }
-  .text-primary-body-sm:hover, .button .button-text:hover, .button-typography .button-text:hover, .text-primary-body-sm:focus, .button .button-text:focus, .button-typography .button-text:focus {
+  .text-primary-body-sm:hover, .button .button-text:hover, .button-primary .button-text:hover, .text-primary-body-sm:focus, .button .button-text:focus, .button-primary .button-text:focus {
     text-decoration: none; }
-  .text-primary-body-sm.is-uppercase, .button .is-uppercase.button-text, .button-typography .is-uppercase.button-text {
+  .text-primary-body-sm.is-uppercase, .button .is-uppercase.button-text, .button-primary .is-uppercase.button-text {
     text-transform: uppercase; }
 
 .text-primary-body-md {
@@ -1761,7 +1761,7 @@ hr {
   .text-primary-body-md.is-uppercase {
     text-transform: uppercase; }
 
-.text-primary-body-lg {
+.text-primary-body-lg, .button.is-size-lg .button-text, .button-primary.is-size-lg .button-text {
   display: inline-block;
   font-family: Roboto-Slab-Regular;
   font-size: 18px;
@@ -1770,9 +1770,9 @@ hr {
   letter-spacing: normal;
   vertical-align: middle;
   text-transform: none; }
-  .text-primary-body-lg:hover, .text-primary-body-lg:focus {
+  .text-primary-body-lg:hover, .button.is-size-lg .button-text:hover, .button-primary.is-size-lg .button-text:hover, .text-primary-body-lg:focus, .button.is-size-lg .button-text:focus, .button-primary.is-size-lg .button-text:focus {
     text-decoration: none; }
-  .text-primary-body-lg.is-uppercase {
+  .text-primary-body-lg.is-uppercase, .button.is-size-lg .is-uppercase.button-text, .button-primary.is-size-lg .is-uppercase.button-text {
     text-transform: uppercase; }
 
 .text-primary-body-xl {
@@ -1880,7 +1880,6 @@ hr {
 /*
 <button class="button" type="button">
   <span class="button-body">
-    <span class="button-icon">...</span>
     <img class="button-icon" src="..." alt="Icon">
     <span class="button-text">...</span>
   </span>
@@ -1888,7 +1887,6 @@ hr {
 
 <a class="button" href="#">
   <span class="button-body">
-    <span class="button-icon">...</span>
     <img class="button-icon" src="..." alt="Icon">
     <span class="button-text">...</span>
   </span>
@@ -1948,30 +1946,30 @@ hr {
     box-shadow: 0 0 0 transparent; }
   .button:focus {
     outline: none; }
-  .button.is-primary {
-    background-color: #FF5684; }
-  .button.is-secondary {
-    background-color: #08AAF1; }
-  .button.is-padding-blank {
-    padding: 0; }
+  .button.is-size-sm {
+    height: 28px; }
+  .button.is-size-lg {
+    height: 48px; }
+  .button.is-flexible {
+    min-width: 1px; }
   .button.is-fluid {
     width: 100%; }
 
-.button-typography {
+.button-primary {
   display: inline-block;
-  min-width: auto;
-  height: auto;
-  padding: 0;
-  background-color: transparent;
+  min-width: 150px;
+  height: 36px;
+  padding: 0 10px;
+  background-color: #FF5684;
   border-style: solid;
   border-width: 0;
   border-color: transparent;
-  border-radius: initial;
+  border-radius: 3px;
   vertical-align: middle;
   -webkit-box-shadow: 0 0 0 transparent;
   box-shadow: 0 0 0 transparent;
   cursor: pointer; }
-  .button-typography .button-body {
+  .button-primary .button-body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1990,32 +1988,32 @@ hr {
     align-items: center;
     -ms-flex-line-pack: center;
     align-content: center; }
-  .button-typography .button-icon {
+  .button-primary .button-icon {
     display: inline-block;
     vertical-align: middle; }
-    .button-typography .button-icon.is-text-left {
-      margin-left: 0; }
-    .button-typography .button-icon.is-text-right {
-      margin-right: 0; }
-  .button-typography .button-text {
-    color: #111111; }
-  .button-typography:hover {
-    background-color: transparent;
+    .button-primary .button-icon.is-text-left {
+      margin-left: 10px; }
+    .button-primary .button-icon.is-text-right {
+      margin-right: 10px; }
+  .button-primary .button-text {
+    color: #FFFFFF; }
+  .button-primary:hover {
+    background-color: #F97FA0;
     border-width: 0;
-    border-color: initial;
+    border-color: transparent;
     text-decoration: none; }
-    .button-typography:hover .button-text {
-      color: #111111; }
-  .button-typography:active, .button-typography:focus {
+    .button-primary:hover .button-text {
+      color: #FFFFFF; }
+  .button-primary:active, .button-primary:focus {
     -webkit-box-shadow: 0 0 0 transparent;
     box-shadow: 0 0 0 transparent; }
-  .button-typography:focus {
+  .button-primary:focus {
     outline: none; }
-  .button-typography.is-primary {
-    background-color: #FF5684; }
-  .button-typography.is-secondary {
-    background-color: #08AAF1; }
-  .button-typography.is-padding-blank {
-    padding: 0; }
-  .button-typography.is-fluid {
+  .button-primary.is-size-sm {
+    height: 28px; }
+  .button-primary.is-size-lg {
+    height: 48px; }
+  .button-primary.is-flexible {
+    min-width: 1px; }
+  .button-primary.is-fluid {
     width: 100%; }
