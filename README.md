@@ -1234,10 +1234,18 @@ References: https://www.designil.com/button-design-ui-ux.html
     // >>>>>>>>>>>>>>>>>>>>>>>
   }
   ```
-  - การนำ Component มาใช้ในรูปแบบ mixin จะมีข้อดีดังนี้
-    - สืบทอดค่า Default CSS Properties, Child/States/Modifiers class ต่างๆ มาได้ทั้งหมด
-    - สามารถเพิ่ม Child/States/Modifiers class ที่มีเฉพาะ Component ตัวหนึ่งๆ ได้ โดยไม่กระทบกับ Component อื่นๆ ที่ใช้ mixins ตัวเดียวกัน
+* การนำ Component มาใช้ในรูปแบบ mixin จะมีข้อดีดังนี้
+  - สืบทอดค่า Default CSS Properties, Child/States/Modifiers class ต่างๆ มาได้ทั้งหมด (Extend)
+  - สามารถเพิ่ม Child/States/Modifiers class ที่มีเฉพาะ Component ตัวหนึ่งๆ ได้ โดยไม่กระทบกับ Component อื่นๆ ที่ใช้ mixins ตัวเดียวกัน
+
 ## Collection
+* Collection หรือ Complex component คือ การนำ Component มากกว่า 1 ตัวมาประกอบเข้าด้วยกัน
+* Anatomy จะเหมือนกับ Component ที่ประกอบด้วย Structure, Detail, Size, State และ Modifier รวมไปถึงการ Setting-up และ Usage
+* Setting-up จะมีส่วนที่แตกต่างเล็กน้อย คือ จะมีการนำ Component อื่นมาใช้เป็น Child ด้วย โดยการ @include
+
+### Example
+* การสร้าง Card with excerpt คือ การ์ดที่มีรูปภาพ หัวข้อ คำอธิบาย และปุ่ม
+
 
 ## Calibrate font
 * แนวทางการจัดการเว็บไซต์หลายภาษา กรณีมีการใช้ Font family ของแต่ละภาษาเป็นคนละชนิดกัน
