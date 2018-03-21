@@ -1356,7 +1356,7 @@ References: https://www.designil.com/button-design-ui-ux.html
 
 ## CSS Processsor compile program
 
-## VSCode setting for react
+## VSCode setting
 
 ## Git comment
 * ในกรณีทำโปรเจคร่วมกับทีมที่ประกอบด้วย HTML/CSS Editor, Frontend(Script) และ Backend ให้ทำ Label ด้านหน้าของ Comment เพื่อแจ้งให้คนในทีมทราบด้วยว่าแก้ไขอะไรไป
