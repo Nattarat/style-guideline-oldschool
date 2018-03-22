@@ -399,6 +399,12 @@ $color-gray-6: #000000;
 * ขนาดและระยะห่างให้ใช้ตัวย่อแทนชื่อเต็ม
 ```
 .grids {
+  // Mini
+  &.is-mn {...}
+
+  // Tiny
+  &.is-tn {...}
+
   // Extra extra small
   &.is-xxs {...}
 
@@ -419,6 +425,15 @@ $color-gray-6: #000000;
 
   // Extra extra large
   &.is-xxl {...}
+
+  // Big
+  &.is-bg {...}
+
+  // Huge
+  &.is-hg {...}
+
+  // Massive
+  &.is-ms {...}
 }
 ```
 
