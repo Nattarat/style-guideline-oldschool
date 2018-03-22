@@ -4,7 +4,7 @@
 * Guideline นี้จะมีลักษณะที่เขียน Style แยกออกมาเป็นไฟล์เดียวและ include เข้าไปที่ head โดยโปรเจคที่นำ Guideline นี้ไปใช้งาน ได้แก่ ASP.net, Magento, Symphony, Wordpress, Angular 1, None frontend framework เป็นต้น
 
 ## Table of contents
-* [Syntax & Formatting](#syntax-formatting)
+* [Syntax and Formatting](#syntax-and-formatting)
   - [Strings](#strings)
   - [Numbers](#numbers)
   - [Colors](#colors)
@@ -13,7 +13,7 @@
 * [Naming conventions](#naming-conventions)
   - [Color](#color)
   - [Font](#font)
-  - [Sizing & Spacing](#sizing-spacing)
+  - [Sizing and Spacing](#sizing-and-spacing)
   - [Component](#component)
   - [Image](#image)
 * [Architecture](#architecture)
@@ -46,7 +46,7 @@
 * [Start project by browser sync](#start-project-by-browser-sync)
 * [CSS Processsor compile program](#css-processsor-compile-program)
 
-## Syntax & Formatting
+## Syntax and Formatting
 * ใช้ 2 spaces indents (ไม่ใช้ tabs)
 * หลังชื่อ Selector และ Property ให้เว้น 1 space
 * เขียน Property แบบเว้นบรรทัด
@@ -395,7 +395,7 @@ $color-gray-6: #000000;
 * การตั้งชื่อ font-family ที่ @font-face ให้ตั้งชื่อตามไฟล์ font ที่อยู่ภายในเครื่อง แต่ไม่ต้องเว้นวรรคคำและคั่น weight ด้วย hyphen เช่น DBHelvithaicaX-Regular
   * Windows > Control Panel > Fonts
 
-### Sizing & Spacing
+### Sizing and Spacing
 * ขนาดและระยะห่างให้ใช้ตัวย่อแทนชื่อเต็ม
 ```
 .grids {
@@ -1697,20 +1697,20 @@ git commit -m "html/css: edit about page | content: add facebook icon | js: add 
 
 ## Start project by browser sync
 * Style Guideline Oldschool นี้สามารถนำไปใช้เป็น Starter ของโปรเจคได้ โดยมีวิธีการติดตั้งและใช้งานดังนี้
-  1. ไปที่ https://github.com/Nattarat/style-guideline-oldschool และ Download
+  - ไปที่ https://github.com/Nattarat/style-guideline-oldschool และ Download
 
       ![Style guide oldschool download](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/style-guide-oldschool-download.png)
 
-  2. ลง Modules โดยใช้คำสั่ง (จำเป็นต้องลง [Node.js](https://nodejs.org/en/))
+  - ลง Modules โดยใช้คำสั่ง (จำเป็นต้องลง [Node.js](https://nodejs.org/en/))
   ```
   npm install
   ```
-  3. สั่ง Run project โดยใช้คำสั่ง
+  - สั่ง Run project โดยใช้คำสั่ง
   ```
   npm start
   ```
-  4. เริ่มทำ Project ได้ โดยเมื่อมีการแก้ไข Files ต่างๆ Browser จะทำการ Refresh ให้อัตโนมัติ
-  5. สั่ง Stop project โดยใช้กด Ctrl + c และพิมพ์ y
+  - เริ่มทำ Project ได้ โดยเมื่อมีการแก้ไข Files ต่างๆ Browser จะทำการ Refresh ให้อัตโนมัติ
+  - สั่ง Stop project โดยใช้กด Ctrl + c และพิมพ์ y
 
 ## CSS Processsor compile program
 * โปรแกรม Compile SCSS เป็น CSS แนะนำให้ใช้ [Prepros](https://prepros.io/) โดย Compile settings ดังนี้
