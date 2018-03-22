@@ -73,59 +73,70 @@
   <meta itemprop="description" content="Description_Detail_less_than_200_characters"/>
   <meta itemprop="image" content="https://example.com/GooglePlus_Cover_Timeline_Image.jpg"/>
   -->
-
-  <style>
-    .partition-line {
-      position: relative;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      border-top: 0;
-    }
-
-    .partition-line:before {
-      content: ' ';
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      height: 1px;
-      background-color: #EEEEEE;
-    }
-  </style>
 </head>
 <body>
-  <button class="button is-size-sm" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Small size</span>
-    </span>
-  </button>
-  <button class="button" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Default size</span>
-    </span>
-  </button>
-  <button class="button is-size-lg" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Large size</span>
-    </span>
-  </button>
-  <hr class="partition-line">
-  <button class="button is-flexible" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Flexible</span>
-    </span>
-  </button>
-  <hr class="partition-line">
-  <button class="button is-fluid" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Fluid</span>
-    </span>
-  </button>
-  <hr class="partition-line">
-  <button class="button-primary" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Primary button</span>
-    </span>
-  </button>
+  <div class="bootstrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-image">
+                <div class="media-16-9">
+                  <img src="./assets/images/contents/home-banner.jpg" alt="Cover">
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h2>Japanese Nadeshiko</h2>
+              </div>
+              <div class="card-description">
+                <p>a japanese term used to praise the unadorned, clean beauty of a japanese woman</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-button">
+                <a class="button-primary" href="#" target="_blank">
+                  <span class="button-body">
+                    <span class="button-text">See detail</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card-primary">
+            <div class="card-header">
+              <div class="card-image">
+                <div class="media-16-9">
+                  <img src="./assets/images/contents/home-banner.jpg" alt="Cover">
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h2>Japanese Nadeshiko</h2>
+              </div>
+              <div class="card-description">
+                <p>a japanese term used to praise the unadorned, clean beauty of a japanese woman</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-button">
+                <a class="button" href="#" target="_blank">
+                  <span class="button-body">
+                    <span class="button-text">See detail</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="./assets/js/jquery/jquery.min.js"></script>
   <script src="./assets/js/is_js/is.min.js"></script>

@@ -1,0 +1,280 @@
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// ==================================================================================================
+//
+// Card
+// * Structure & Detail
+// * Mixins
+// * Contextual variations
+//   - Default
+//   - Primary
+// ==================================================================================================
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+
+@charset 'utf-8';
+
+// Structure & Detail
+// ============================================================
+/*
+<div class="card">
+  <div class="card-header">
+    <div class="card-image">
+      <div class="media-16-9">
+        <img src="./assets/images/contents/home-banner.jpg" alt="Cover">
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-title">
+      <h2>Japanese Nadeshiko</h2>
+    </div>
+    <div class="card-description">
+      <p>a japanese term used to praise the unadorned, clean beauty of a japanese woman</p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="card-button">
+      <a class="button-primary" href="#" target="_blank">
+        <span class="button-body">
+          <span class="button-text">See detail</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+*/
+
+// Mixins
+// ============================================================
+@mixin card-variant(
+  $card-background-color: transparent,
+  $card-border-radius: 0,
+  $card-box-shadow: none,
+
+  // Header
+  $card-header-padding: 0,
+  $card-header-spacing-bottom: 15px,
+
+  // Body
+  $card-body-padding: 0,
+  $card-body-spacing-bottom: 20px,
+
+  // Footer
+  $card-footer-padding: 0,
+  $card-footer-alignment-horozontal: flex-start,
+
+  // Image
+  $card-image-spacing-bottom: 0,
+
+  // Title
+  $card-title-spacing-bottom: 10px,
+  $card-title-text-style: $text-style-primary-heading-xs-bold,
+  $card-title-text-color: $color-gray-4,
+
+  // Description
+  $card-description-spacing-bottom: 0,
+  $card-description-text-style: $text-style-primary-body-sm,
+  $card-description-text-color: $color-gray-4
+) {
+  // Mixins
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Helpers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Parent styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  background-color: $card-background-color;
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+
+  // Child element styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  .card-header {
+    padding: $card-header-padding;
+    margin-bottom: $card-header-spacing-bottom;
+  }
+
+  .card-body {
+    padding: $card-body-padding;
+    margin-bottom: $card-body-spacing-bottom;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: $card-footer-alignment-horozontal;
+    padding: $card-footer-padding;
+  }
+
+  .card-image {
+    margin-bottom: $card-image-spacing-bottom;
+  }
+
+  .card-title {
+    margin-bottom: $card-title-spacing-bottom;
+
+    * {
+      @extend #{$card-title-text-style};
+      color: $card-title-text-color;
+    }
+  }
+
+  .card-description {
+    margin-bottom: $card-description-spacing-bottom;
+
+    * {
+      @extend #{$card-description-text-style};
+      color: $card-description-text-color;
+    }
+  }
+
+  .card-button {
+    display: inline-block;
+  }
+
+  // States
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+}
+
+// Browser variations
+// >>>>>>>>>>>>>>>>>>>>>>>
+// IE 10-11
+.ie {}
+
+// Edge
+.edge {}
+
+// Safari mac
+.safari {}
+
+// Firefox
+.firefox {}
+
+// Safari iPhone/iPad
+.safari-mobile {}
+
+// Chrome Android
+.chrome-mobile {}
+
+// Contextual variations
+// ============================================================
+
+// Default
+// ------------------------------------------------
+.card {
+  // Mixins
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  @include card-variant();
+
+  // Helpers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Parent styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Child element styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Media queries
+  // >>>>>>>>>>>>>>>>>>>>>>>
+}
+
+// Browser variations
+// >>>>>>>>>>>>>>>>>>>>>>>
+// IE 10-11
+.ie {}
+
+// Edge
+.edge {}
+
+// Safari mac
+.safari {}
+
+// Firefox
+.firefox {}
+
+// Safari iPhone/iPad
+.safari-mobile {}
+
+// Chrome Android
+.chrome-mobile {}
+
+// Primary
+// ------------------------------------------------
+.card-primary {
+  // Mixins
+  // >>>>>>>>>>>>>>>>>>>>>>>
+  @include card-variant(
+    $card-background-color: $color-gray-1,
+    $card-border-radius: $border-radius-sm,
+    $card-box-shadow: $box-shadow-1,
+
+    // Body
+    $card-body-padding: 0 20px,
+
+    // Footer
+    $card-footer-padding: 0 20px 20px 20px,
+    $card-footer-alignment-horozontal: flex-end,
+
+    // Title
+    $card-title-text-color: $color-white-1,
+
+    // Description
+    $card-description-text-color: $color-white-1
+  );
+
+  // Helpers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Parent styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Child element styles
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // States with modifiers
+  // >>>>>>>>>>>>>>>>>>>>>>>
+
+  // Media queries
+  // >>>>>>>>>>>>>>>>>>>>>>>
+}
+
+// Browser variations
+// >>>>>>>>>>>>>>>>>>>>>>>
+// IE 10-11
+.ie {}
+
+// Edge
+.edge {}
+
+// Safari mac
+.safari {}
+
+// Firefox
+.firefox {}
+
+// Safari iPhone/iPad
+.safari-mobile {}
+
+// Chrome Android
+.chrome-mobile {}

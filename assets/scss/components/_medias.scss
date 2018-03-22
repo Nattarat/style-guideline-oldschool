@@ -5,7 +5,9 @@
 // * Structure & Detail
 // * Mixins
 // * Contextual variations
-//   - Default (16:9)
+//   - Ratio 16:9
+//   - Ratio 4:3
+//   - Ratio 1:1 (Square)
 //
 // ==================================================================================================
 // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16,11 +18,22 @@
 // ============================================================
 /*
 <div class="media-16-9">
-  <img src="..." alt="Banner">
+  <img src="..." alt="...">
+</div>
+
+<div class="media-16-9">
+  <video controls>
+    <source src="./assets/videos/the-illusion-of-life.mp4" type="video/mp4">
+  </video>
 </div>
 
 <div class="media-4-3 is-full-height">
-  <img src="..." alt="Banner">
+  <img src="..." alt="...">
+</div>
+
+<div class="media-16-9 is-youtube">
+  <iframe width="..." height="..." src="..." frameborder="0" allow="autoplay; encrypted-media"
+    allowfullscreen></iframe>
 </div>
 */
 
@@ -70,6 +83,14 @@
       top: 0;
       left: 50%;
       width: auto;
+      height: 100%;
+    }
+  }
+
+  &.is-youtube {
+    iframe {
+      @include translateY(0);
+      top: 0;
       height: 100%;
     }
   }
@@ -201,13 +222,13 @@
 // Chrome Android
 .chrome-mobile {}
 
-// 2:1
+// 1:1
 // ------------------------------------------------
-.media-2-1 {
+.media-square {
   // Mixins
   // >>>>>>>>>>>>>>>>>>>>>>>
   @include media-variant(
-    $image-height-ratio: 50%
+    $image-height-ratio: 100%
   );
 
   // Helpers
@@ -224,6 +245,9 @@
 
   // Modifiers
   // >>>>>>>>>>>>>>>>>>>>>>>
+  &.is-circle {
+    border-radius: 50%;
+  }
 
   // States with modifiers
   // >>>>>>>>>>>>>>>>>>>>>>>

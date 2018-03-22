@@ -23,7 +23,7 @@
   </span>
 </button>
 
-<a class="button" href="#">
+<a class="button" href="#" target="...">
   <span class="button-body">
     <img class="button-icon" src="..." alt="Icon">
     <span class="button-text">...</span>
@@ -43,7 +43,7 @@
   $button-background-color: $color-gray-3,
   $button-border-width: 0,
   $button-border-color: transparent,
-  $button-border-radius: $border-radiuse-xs,
+  $button-border-radius: $border-radius-xs,
   $button-box-shadow: 0 0 0 rgba(0, 0, 0, 0),
 
   // Body hover

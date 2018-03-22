@@ -84,11 +84,11 @@ $font-size-primary-heading-xl-en: 48px !default;
 // ============================================================
 // Thai
 $line-height-primary-body: 1.3 !default;
-$line-height-primary-heading: 1.6 !default;
+$line-height-primary-heading: 1.3 !default;
 
 // English
 $line-height-primary-body-en: 1.3 !default;
-$line-height-primary-heading-en: 1.6 !default;
+$line-height-primary-heading-en: 1.3 !default;
 
 // Letter spacings
 // ============================================================
@@ -109,6 +109,11 @@ $text-style-primary-body-sm: '.text-primary-body-sm' !default;
 $text-style-primary-body-md: '.text-primary-body-md' !default;
 $text-style-primary-body-lg: '.text-primary-body-lg' !default;
 $text-style-primary-body-xl: '.text-primary-body-xl' !default;
+$text-style-primary-body-xs-bold: '.text-primary-body-xs-bold' !default;
+$text-style-primary-body-sm-bold: '.text-primary-body-sm-bold' !default;
+$text-style-primary-body-md-bold: '.text-primary-body-md-bold' !default;
+$text-style-primary-body-lg-bold: '.text-primary-body-lg-bold' !default;
+$text-style-primary-body-xl-bold: '.text-primary-body-xl-bold' !default;
 
 // Primary Heading
 $text-style-primary-heading-xs: '.text-primary-heading-xs' !default;
@@ -116,6 +121,11 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 $text-style-primary-heading-md: '.text-primary-heading-md' !default;
 $text-style-primary-heading-lg: '.text-primary-heading-lg' !default;
 $text-style-primary-heading-xl: '.text-primary-heading-xl' !default;
+$text-style-primary-heading-xs-bold: '.text-primary-heading-xs-bold' !default;
+$text-style-primary-heading-sm-bold: '.text-primary-heading-sm-bold' !default;
+$text-style-primary-heading-md-bold: '.text-primary-heading-md-bold' !default;
+$text-style-primary-heading-lg-bold: '.text-primary-heading-lg-bold' !default;
+$text-style-primary-heading-xl-bold: '.text-primary-heading-xl-bold' !default;
 
 // Z indexs
 // ============================================================
@@ -184,8 +194,8 @@ $animation-timing-elastic: cubic-bezier(.835, -.005, .06, 1) !default;
 
 // Border radiuses
 // ============================================================
-$border-radiuse-xs: 3px !default;
-$border-radiuse-sm: 5px !default;
+$border-radius-xs: 3px !default;
+$border-radius-sm: 5px !default;
 
 // Box shadows
 // ============================================================

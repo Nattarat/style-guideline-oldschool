@@ -5,11 +5,11 @@
 
 ## Table of contents
 * [Syntax & Formatting](#syntax-formatting)
-* [Strings](#strings)
-* [Numbers](#numbers)
-* [Colors](#colors)
-* [Property sorting](#property-sorting)
-* [Selector nesting](#selector-nesting)
+  - [Strings](#strings)
+  - [Numbers](#numbers)
+  - [Colors](#colors)
+  - [Property sorting](#property-sorting)
+  - [Selector nesting](#selector-nesting)
 * [Naming conventions](#naming-conventions)
   - [Color](#color)
   - [Font](#font)
@@ -31,9 +31,20 @@
   - [Desktop](#desktop)
   - [@media Pattern](#media-pattern)
 * [Typography](#typography)
-  - [Anatomy](#anatomy)
-  - [Setting-up](#setting-up)
-  - [Usage](#usage)
+  - [Anatomy](#typography-anatomy)
+  - [Setting-up](#typography-setting-up)
+  - [Usage](#typography-usage)
+* [Collection](#collection)
+  - [Example](#collection-example)
+  - [Usage](#collection-usage)
+* [Calibrate font](#calibrate-font)
+  - [Setting-up](#calibrate-font-setting-up)
+* [How to using other CSS framework in project](#how-to-using-other-css-framework-in-project)
+  - [Setting-up](#vendor-setting-up)
+* [Git comment](#git-comment)
+* [VSCode extensions and settings](#vscode-extensions-and-settings)
+* [Start project by browser sync](#start-project-by-browser-sync)
+* [CSS Processsor compile program](#css-processsor-compile-program)
 
 ## Syntax & Formatting
 * ใช้ 2 spaces indents (ไม่ใช้ tabs)
@@ -558,6 +569,7 @@ icon-social-facebook-square@2x.png
     - scaffolding: ตั้งค่า CSS Properties ตั้งต้นของ HTML tags ใหม่สำหรับโปรเจค
     - typography: Embed font family และเก็บ font style ของโปรเจค
     - variables: ตั้งค่าตัวแปรที่ใช้กับ Style ในโปรเจค เช่น Colors, Font families
+  * collections: เก็บไฟล์สไตล์ Collections(Complex component) ของโปรเจค เช่น Card
   * components: เก็บไฟล์สไตล์ Component ของโปรเจค เช่น Button, Dropdown
   * helpers: เก็บไฟล์สไตล์ที่สามารถใช้ข้ามโปรเจคได้ โดยไฟล์ในโฟลเดอร์นี้จะไม่ถูก compiled ออกมาเป็น CSS (ยกเว้น utilities)
     - mixins: เก็บ CSS ที่เป็น group properties ที่สามารถเปลี่ยนแปลงค่าได้และใช้งานเป็นประจำ
@@ -750,7 +762,7 @@ icon-social-facebook-square@2x.png
 * หลีกเลี่ยงการเขียน Font/Text (CSS properties) ใน Class selector ที่เป็น Container เนื่องจากต้องการความเป็น Scope/Local และ Semantic ของ Class selecctor ที่มากขึ้น (CSS properties ของ Parent class ควรแสดงผลกับตัวมันเองเท่านั้น ไม่ควรส่งผลต่อ Child class)
 * นำ Typography ออกมาจาก Container โดยแยกเขียนเป็น Class selector ออกมาต่างหาก
 
-### Anatomy
+### Typography Anatomy
 1. Family-Weight: หน้าตาของตัวอักษร(ชื่อและความหนา)
     * ความหนาของตัวอักษร เช่น Light, Regular, Bold, Black เป็นความหนาของตัว Font เองไม่ใช่ความหนาที่เกิดจาก CSS property
     * ในกรณีไม่ได้ Embed font ใส่ในโปรเจค แต่ใช้ Google Font วิธีการให้ได้มาซึ่ง Font weight ต่างๆ จะใช้การอ้างอิง font-weight ที่เป็นตัวเลข เช่น
@@ -762,7 +774,7 @@ icon-social-facebook-square@2x.png
     * References: http://smad.jmu.edu/shen/webtype/index.html
 4. Letter spacing: ระยะห่างแนวนอนของแต่ละตัวอักษร
 
-### Setting-up
+### Typography Setting-up
 1. แปลงไฟล์
     * นำไฟล์ ttf หรือ otf ไปแปลงเป็น Web fonts ที่ https://www.fontsquirrel.com/tools/webfont-generator และตั้งค่า ดังนี้
       - เลือก Expert
@@ -836,6 +848,9 @@ icon-social-facebook-square@2x.png
         - .text-primary-body-xs
         - .text-primary-heading-xs
         - การตั้งชื่อ extendedName ของ Class จะไม่ใช้ชื่อ Font โดยตรงแต่จะใช้ชื่อ primary, secondary, tertiary แทนเพื่อหลีกเลียงกรณีเว็บไซต์มีหลายภาษา และแต่ละภาษาใช้ Font คนละแบบ
+    * Text style ถ้ามีหลาย Weight จะสร้าง class โดยอิงตาม Weight เช่น
+        - .text-primary-body-xs-bold
+        - .text-primary-heading-xs-bold
 ```
 .text-primary {
   // Body
@@ -850,6 +865,16 @@ icon-social-facebook-square@2x.png
         $text-line-height: $line-height-primary-body,
         $text-color: $letter-spacing-primary-body
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-body-xs,
+          $text-line-height: $line-height-primary-body,
+          $text-letter-spacing: $letter-spacing-primary-body
+        );
+      }
     }
 
     // Small
@@ -862,6 +887,16 @@ icon-social-facebook-square@2x.png
         $text-line-height: $line-height-primary-body,
         $text-color: $letter-spacing-primary-body
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-body-sm,
+          $text-line-height: $line-height-primary-body,
+          $text-letter-spacing: $letter-spacing-primary-body
+        );
+      }
     }
   }
 
@@ -877,6 +912,16 @@ icon-social-facebook-square@2x.png
         $text-line-height: $line-height-primary-heading,
         $text-color: $letter-spacing-primary-heading
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-heading-xs,
+          $text-line-height: $line-height-primary-heading,
+          $text-letter-spacing: $letter-spacing-primary-heading
+        );
+      }
     }
 
     // Small
@@ -889,6 +934,16 @@ icon-social-facebook-square@2x.png
         $text-line-height: $line-height-primary-heading,
         $text-color: $letter-spacing-primary-heading
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-heading-sm,
+          $text-line-height: $line-height-primary-heading,
+          $text-letter-spacing: $letter-spacing-primary-heading
+        );
+      }
     }
   }
 }
@@ -905,7 +960,7 @@ $text-style-primary-heading-xs: '.text-primary-heading-xs' !default;
 $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 ```
 
-### Usage
+### Typography Usage
 * ที่ Class selector ให้ใช้ @extend และตามด้วย Text style variable
 * เนื่องจากมีการส่งผ่าน Variable ไปที่ @extend จึงต้องใช้ #{...} ครอบไว้เพื่อบอกว่าไม่ใช่ String
 ```
@@ -920,7 +975,7 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 * Component แต่ละแบบเมื่อนำมาประกอบเข้าด้วยกันก็จะเกิดเป็นโครงสร้าง และเมื่อนำโครงสร้างต่างๆ มาประกอบเข้าด้วยกันตามดีไซน์ก็จะเกิดเป็น Website
 * ข้อดีของ Component คือ มีลักษณะเป็นชิ้นๆ และแต่ละแบบจะไม่มีความเกี่ยวข้องกัน ดังนั้นเมื่อมีการปรับแก้ไข/เพิ่มเติมโครงสร้าง เราไม่จำเป็นต้องรื้อโครงสร้างทั้งหมดใหม่ตั้งแต่ต้น แต่เราสามารถแก้ไข/เพิ่มเติมเฉพาะส่วนเท่านั้นได้ ทำให้สามารถเข้าถึงปัญหาและประหยัดเวลาในการแก้ไข/เพิ่มเติมได้อย่างมีประสิทธิภาพมากขึ้น
 
-### Anatomy
+### Component Anatomy
 * Structure
   - โครงสร้างพื้นฐาน ที่เมื่อกำหนดค่า CSS Properties ต่างๆ เข้าไป จะแสดงรูปร่างออกมา
   - การวิเคราะห์โครงสร้างไม่ได้มีหลักการตายตัว โดยพื้นฐานให้ใช้การสังเกตความสัมพันธ์ระหว่าง UI กับ CSS Properties แล้วทำการลิสต์ออกมา
@@ -992,11 +1047,11 @@ $text-style-primary-heading-sm: '.text-primary-heading-sm' !default;
 
 References: https://www.designil.com/button-design-ui-ux.html
 
-### Setting-up
+### Component Setting-up
 
 ตัวอย่างการสร้าง Button component
 
-1. ที่ scss/components สร้างไฟล์ _button.scss
+1. ที่ scss/components สร้างไฟล์ _buttons.scss
 2. ออกแบบ Structure และ Detail
     * HTML tag และ CSS Class
     * Comment ไว้เพื่อป้องกันการลืมโครงสร้าง และทำให้คนในทีมมาหยิบไปใช้ได้ง่าย
@@ -1039,7 +1094,7 @@ References: https://www.designil.com/button-design-ui-ux.html
       $button-background-color: $color-gray-3,
       $button-border-width: 0,
       $button-border-color: transparent,
-      $button-border-radius: $border-radiuse-xs,
+      $button-border-radius: $border-radius-xs,
       $button-box-shadow: 0 0 0 rgba(0, 0, 0, 0),
 
       // Body hover
@@ -1166,7 +1221,7 @@ References: https://www.designil.com/button-design-ui-ux.html
     }
     ```
 
-### Usage
+### Component Usage
 * ตัวอย่างการสร้าง Default button คือ ปุ่มที่ใช้ค่า Default ของ Mixin ทั้งหมด
   - ที่ Class selector ให้ใช้ @include และตามด้วยชื่อ mixin โดยไม่ต้องใส่ Parameter ลงไปในวงเล็บ
   ```
@@ -1243,15 +1298,238 @@ References: https://www.designil.com/button-design-ui-ux.html
 * Anatomy จะเหมือนกับ Component ที่ประกอบด้วย Structure, Detail, Size, State และ Modifier รวมไปถึงการ Setting-up และ Usage
 * Setting-up จะมีส่วนที่แตกต่างเล็กน้อย คือ จะมีการนำ Component อื่นมาใช้เป็น Child ด้วย โดยการ @include
 
-### Example
-* การสร้าง Card with excerpt คือ การ์ดที่มีรูปภาพ หัวข้อ คำอธิบาย และปุ่ม
+### Collection Example
+* การสร้าง Card คือ การ์ดที่มีรูปภาพ หัวข้อ คำอธิบาย และปุ่ม
 
+  ![Card](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/card-with-excerpt.jpg)
+
+1. scss/collections สร้างไฟล์ _cards.scss
+2. ออกแบบ Structure และ Detail
+    * Structure ของ Card จะประกอบด้วย media และ button component
+    * HTML tag และ CSS Class
+    * Comment ไว้เพื่อป้องกันการลืมโครงสร้าง และทำให้คนในทีมมาหยิบไปใช้ได้ง่าย
+    ```
+    // Structure & Detail
+    // ============================================================
+    /*
+    <div class="card">
+      <div class="card-header">
+        <div class="card-image">
+          <div class="media-16-9">
+            <img src="./assets/images/contents/home-banner.jpg" alt="Cover">
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">
+          <h2>Japanese Nadeshiko</h2>
+        </div>
+        <div class="card-description">
+          <p>a japanese term used to praise the unadorned, clean beauty of a japanese woman</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-button">
+          <a class="button-primary" href="#" target="_blank">
+            <span class="button-body">
+              <span class="button-text">See detail</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    */
+    ```
+3. สร้าง Mixin
+    * ชื่อ Mixin ของ Collection ให้เริ่มต้นชื่อ Collection ขั้นด้วย hyphen และตามด้วย variant
+    ```
+    @mixin card-variant(...) {}
+    ```
+    * Parameters ที่กำหนดใน Mixin จะมีความสอดคล้องกับ Structure โดยมีหลักการ คือ สร้าง Parameters ให้กับ CSS Properties ที่มีการเปลี่ยนแปลงค่าบ่อยๆ เช่น Background color, Padding, Margin เป็นต้น
+    * สร้าง CSS class/pseudo class สำหรับ Size, State และ Modifier
+    ```
+    // Mixins
+    // ============================================================
+    @mixin card-variant(
+      $card-background-color: transparent,
+      $card-border-radius: 0,
+      $card-box-shadow: none,
+
+      // Header
+      $card-header-padding: 0,
+      $card-header-spacing-bottom: 15px,
+
+      // Body
+      $card-body-padding: 0,
+      $card-body-spacing-bottom: 20px,
+
+      // Footer
+      $card-footer-padding: 0,
+      $card-footer-alignment-horozontal: flex-start,
+
+      // Image
+      $card-image-spacing-bottom: 0,
+
+      // Title
+      $card-title-spacing-bottom: 10px,
+      $card-title-text-style: $text-style-primary-heading-xs-bold,
+
+      // Description
+      $card-description-spacing-bottom: 0,
+      $card-description-text-style: $text-style-primary-body-sm
+    ) {
+      // Mixins
+      // >>>>>>>>>>>>>>>>>>>>>>>
+
+      // Helpers
+      // >>>>>>>>>>>>>>>>>>>>>>>
+
+      // Parent styles
+      // >>>>>>>>>>>>>>>>>>>>>>>
+      background-color: $card-background-color;
+      border-radius: $card-border-radius;
+      box-shadow: $card-box-shadow;
+
+      // Child element styles
+      // >>>>>>>>>>>>>>>>>>>>>>>
+      .card-header {
+        padding: $card-header-padding;
+        margin-bottom: $card-header-spacing-bottom;
+      }
+
+      .card-body {
+        padding: $card-body-padding;
+        margin-bottom: $card-body-spacing-bottom;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: $card-footer-alignment-horozontal;
+      }
+
+      .card-image {
+        margin-bottom: $card-image-spacing-bottom;
+      }
+
+      .card-title {
+        margin-bottom: $card-title-spacing-bottom;
+
+        * {
+          @extend #{$card-title-text-style}
+        }
+      }
+
+      .card-description {
+        margin-bottom: $card-description-spacing-bottom;
+
+        * {
+          @extend #{$card-description-text-style}
+        }
+      }
+
+      .card-button {
+        display: inline-block;
+      }
+
+      // States
+      // >>>>>>>>>>>>>>>>>>>>>>>
+
+      // Modifiers
+      // >>>>>>>>>>>>>>>>>>>>>>>
+
+      // States with modifiers
+      // >>>>>>>>>>>>>>>>>>>>>>>
+    }
+    ```
+
+### Usage
+* ตัวอย่างการสร้าง Default card คือ Card ที่ใช้ค่า Default ของ Mixin ทั้งหมด
+  - ที่ Class selector ให้ใช้ @include และตามด้วยชื่อ mixin โดยไม่ต้องใส่ Parameter ลงไปในวงเล็บ
+  ```
+  // Default
+  // ------------------------------------------------
+  .card {
+    // Mixins
+    // >>>>>>>>>>>>>>>>>>>>>>>
+    @include card-variant();
+
+    // Helpers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Parent styles
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Child element styles
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // States
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Modifiers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // States with modifiers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Media queries
+    // >>>>>>>>>>>>>>>>>>>>>>>
+  }
+  ```
+* ตัวอย่างการสร้าง Primary card คือ Card ที่มีลักษณะต่างจาก Default
+  - ที่ Class selector ให้ใช้ @include และตามด้วยชื่อ mixin จากนั้นใส่ Parameter และตัวแปรสี Primary ที่ต้องการเข้าไป
+  ```
+  // Primary
+  // ------------------------------------------------
+  .card-primary {
+    // Mixins
+    // >>>>>>>>>>>>>>>>>>>>>>>
+    @include card-variant(
+      $card-background-color: $color-gray-1,
+      $card-border-radius: $border-radius-sm,
+      $card-box-shadow: $box-shadow-1,
+
+      // Body
+      $card-body-padding: 0 20px,
+
+      // Footer
+      $card-footer-padding: 0 20px 20px 20px,
+      $card-footer-alignment-horozontal: flex-end,
+
+      // Title
+      $card-title-text-color: $color-white-1,
+
+      // Description
+      $card-description-text-color: $color-white-1
+    );
+
+    // Helpers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Parent styles
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Child element styles
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // States
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Modifiers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // States with modifiers
+    // >>>>>>>>>>>>>>>>>>>>>>>
+
+    // Media queries
+    // >>>>>>>>>>>>>>>>>>>>>>>
+  }
+  ```
 
 ## Calibrate font
 * แนวทางการจัดการเว็บไซต์หลายภาษา กรณีมีการใช้ Font family ของแต่ละภาษาเป็นคนละชนิดกัน
 * ปัญหาที่เกิดขึ้น คือ Font size, Line height, Letter spacing ของแต่ละ Font family จะแตกต่างกัน ทำให้ Design พัง ตัวอย่างเช่น Design ที่ทำออกมาเพื่อ Font family ภาษาไทย เมื่อเปลี่ยนไปใช้ Font family ภาษาอังกฤษ ที่ Font size, Line height, Letter spacing เดียวกัน กลับแสดงผลไม่เหมือนกัน จึงเป็นสาเหตุให้เราต้องทำการเทียบค่า Font size, Line height, Letter spacing ของ Font family ทั้ง 2 ชนิดใหม่ เพื่อให้ได้การแสดงผลเดียวกัน
 
-### Setting-up
+### Calibrate font Setting-up
 1. นำ Font family ของอีกภาษาเพิ่มเข้าไปที่ fonts folder
 2. ที่ scss/bases สร้างไฟล์ _variables-en.scss ทำตามขั้นตอนดังนี้
     * นำ Variables ของ Typography ได้แก่ Font families, Font sizes, Line heights, Letter spacings มาใส่
@@ -1303,7 +1581,7 @@ References: https://www.designil.com/button-design-ui-ux.html
   - CSS Framework มักจะเอาชื่อ Class ที่มีความเป็น Conventional ที่ดีไปใช้หมดแล้ว ทำให้ยากต่อการตั้งชื่อ Class ใหม่และมีโอกาสที่จะตั้งชื่อแล้วซ้ำกัน
 * แนวทางการนำ CSS framework มาใช้ในโปรเจค เพื่อหลีกเลี่ยงปัญหาต่างๆ คือ การแบ่งส่วน Class ที่จะใช้ออกมาใส่ไว้ในโปรเจคของเรา (ไม่เอามาทั้งหมด)
 
-### Setting-up
+### Vendor Setting-up
 1. ไปที่ Repository ของ CSS Framework แล้วหาไฟล์ CSS ที่ไม่ Minified และทำการ Copy มาใส่ในโปรเจค ตัวอย่างเช่น
     * ต้องการใช้งาน Grids ของ Bootstrap ไปที่ https://github.com/twbs/bootstrap/tree/v4-dev/dist/css
     * Copy เฉพาะส่วนของ Grids
@@ -1352,12 +1630,6 @@ References: https://www.designil.com/button-design-ui-ux.html
 @import '...'
 ```
 
-## Start project by browser sync
-
-## CSS Processsor compile program
-
-## VSCode setting
-
 ## Git comment
 * ในกรณีทำโปรเจคร่วมกับทีมที่ประกอบด้วย HTML/CSS Editor, Frontend(Script) และ Backend ให้ทำ Label ด้านหน้าของ Comment เพื่อแจ้งให้คนในทีมทราบด้วยว่าแก้ไขอะไรไป
 * Comment ให้เขียนด้วย Lowercase ทั้งหมด
@@ -1385,3 +1657,64 @@ References: https://www.designil.com/button-design-ui-ux.html
 ```
 git commit -m "html/css: edit about page | content: add facebook icon | js: add swiperjs to home page"
 ```
+
+## VSCode extensions and settings
+* Extensions
+
+  ![VSCode extensions](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/vscode-extensions.jpg)
+
+* Settings
+  - File > Preferences > Settings > User Settings
+  - Default settings สำหรับเขียน Code ในโปรเจค สามารถปรับแต่งเพิ่มได้
+  ```
+  {
+    "editor.detectIndentation": false,
+    "editor.formatOnPaste": true,
+    "editor.minimap.enabled": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.snippetSuggestions": "top",
+    "window.zoomLevel": 0,
+    "files.trimTrailingWhitespace": true,
+    // Use JavaScript Standard Style instead VSCode validation
+    "javascript.validate.enable": false,
+    "vsicons.projectDetection.disableDetect": true,
+    "workbench.iconTheme": "vscode-icons",
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+    },
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "sublimeTextKeymap.promptV3Features": true,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  }
+  ```
+
+## Start project by browser sync
+* Style Guideline Oldschool นี้สามารถนำไปใช้เป็น Starter ของโปรเจคได้ โดยมีวิธีการติดตั้งและใช้งานดังนี้
+  1. ไปที่ https://github.com/Nattarat/style-guideline-oldschool และ Download
+
+      ![Style guide oldschool download](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/style-guide-oldschool-download.png)
+
+  2. ลง Modules โดยใช้คำสั่ง (จำเป็นต้องลง [Node.js](https://nodejs.org/en/))
+  ```
+  npm install
+  ```
+  3. สั่ง Run project โดยใช้คำสั่ง
+  ```
+  npm start
+  ```
+  4. เริ่มทำ Project ได้ โดยเมื่อมีการแก้ไข Files ต่างๆ Browser จะทำการ Refresh ให้อัตโนมัติ
+  5. สั่ง Stop project โดยใช้กด Ctrl + c และพิมพ์ y
+
+## CSS Processsor compile program
+* โปรแกรม Compile SCSS เป็น CSS แนะนำให้ใช้ [Prepros](https://prepros.io/) โดย Compile settings ดังนี้
+
+    ![Prepros compile settings](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/prepros.jpg)
+
+* ชื่อไฟล์ที่ Compile ไปยัง assets/css ให้ตั้งเป็น main.min.css

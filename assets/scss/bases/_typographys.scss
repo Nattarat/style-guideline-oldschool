@@ -144,6 +144,16 @@
         $text-line-height: $line-height-primary-body,
         $text-letter-spacing: $letter-spacing-primary-body
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-body-xs,
+          $text-line-height: $line-height-primary-body,
+          $text-letter-spacing: $letter-spacing-primary-body
+        );
+      }
     }
 
     // Small
@@ -156,6 +166,16 @@
         $text-line-height: $line-height-primary-body,
         $text-letter-spacing: $letter-spacing-primary-body
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-body-sm,
+          $text-line-height: $line-height-primary-body,
+          $text-letter-spacing: $letter-spacing-primary-body
+        );
+      }
     }
 
     // Medium
@@ -168,6 +188,16 @@
         $text-line-height: $line-height-primary-body,
         $text-letter-spacing: $letter-spacing-primary-body
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-body-md,
+          $text-line-height: $line-height-primary-body,
+          $text-letter-spacing: $letter-spacing-primary-body
+        );
+      }
     }
 
     // Large
@@ -180,6 +210,16 @@
         $text-line-height: $line-height-primary-body,
         $text-letter-spacing: $letter-spacing-primary-body
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-body-lg,
+          $text-line-height: $line-height-primary-body,
+          $text-letter-spacing: $letter-spacing-primary-body
+        );
+      }
     }
 
     // Extra large
@@ -192,6 +232,16 @@
         $text-line-height: $line-height-primary-body,
         $text-letter-spacing: $letter-spacing-primary-body
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-body-xl,
+          $text-line-height: $line-height-primary-body,
+          $text-letter-spacing: $letter-spacing-primary-body
+        );
+      }
     }
   }
 
@@ -207,6 +257,16 @@
         $text-line-height: $line-height-primary-heading,
         $text-letter-spacing: $letter-spacing-primary-heading
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-heading-xs,
+          $text-line-height: $line-height-primary-heading,
+          $text-letter-spacing: $letter-spacing-primary-heading
+        );
+      }
     }
 
     // Small
@@ -219,6 +279,16 @@
         $text-line-height: $line-height-primary-heading,
         $text-letter-spacing: $letter-spacing-primary-heading
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-heading-sm,
+          $text-line-height: $line-height-primary-heading,
+          $text-letter-spacing: $letter-spacing-primary-heading
+        );
+      }
     }
 
     // Medium
@@ -231,6 +301,16 @@
         $text-line-height: $line-height-primary-heading,
         $text-letter-spacing: $letter-spacing-primary-heading
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-heading-md,
+          $text-line-height: $line-height-primary-heading,
+          $text-letter-spacing: $letter-spacing-primary-heading
+        );
+      }
     }
 
     // Large
@@ -243,6 +323,16 @@
         $text-line-height: $line-height-primary-heading,
         $text-letter-spacing: $letter-spacing-primary-heading
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-heading-lg,
+          $text-line-height: $line-height-primary-heading,
+          $text-letter-spacing: $letter-spacing-primary-heading
+        );
+      }
     }
 
     // Extra large
@@ -255,14 +345,25 @@
         $text-line-height: $line-height-primary-heading,
         $text-letter-spacing: $letter-spacing-primary-heading
       );
+
+      &-bold {
+        @include text-variant(
+          $text-display: inline-block,
+          $text-font-family: $font-family-primary-bold,
+          $text-font-size: $font-size-primary-heading-xl,
+          $text-line-height: $line-height-primary-heading,
+          $text-letter-spacing: $letter-spacing-primary-heading
+        );
+      }
     }
   }
 
   // STYLES OF MODIFIER CLASS
   // >>>>>>>>>>>>>>>>>>>>>>>
-  &.is-bold {
-    font-family: $font-family-primary-bold;
-  }
+  // Not create modifier class for font weight bold because can't direct @extend to class
+  // &.is-bold {
+  //   font-family: $font-family-primary-bold;
+  // }
 
   // MEDIA QUERY
   // >>>>>>>>>>>>>>>>>>>>>>>
