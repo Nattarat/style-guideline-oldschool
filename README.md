@@ -1645,6 +1645,26 @@ References: https://www.designil.com/button-design-ui-ux.html
 @import '...'
 ```
 
+## How to overwrite javascript vendor style in project
+
+* ตัวอย่างการนำ Slick ที่เป็น jQuery สำหรับสร้าง Carousel มาใช้งานและเขียนแก้ไข Style
+
+### Javascript vendor Setting-up
+
+1. ติดตั้ง Slick ในโปรเจค (include CSS และ JS) และนำมาใช้งาน
+
+    ![VSCode extensions](https://raw.githubusercontent.com/Nattarat/style-guideline-oldschool/master/README-images/slick-carousel.jpg)
+
+2. ต้องการเปลี่ยนสี Active ของ Bullet pagination ให้ทำตามขั้นตอน ดังนี้
+    * ที่ scss/vendors ให้สร้างไฟล์ SCSS ตามชื่อ Vendor คือ _slick.scss
+    * ให้เขียน Comment ที่หัว โดยมีรายละเอียด ดังนี้
+      - ชื่อ Vendor และตัวเลข Version
+      - GitHub Link ของ Vendor
+      ```
+      * Bootstrap v4.0.0
+        - Grids (https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap-grid.css)
+      ```
+
 ## Git comment
 * ในกรณีทำโปรเจคร่วมกับทีมที่ประกอบด้วย HTML/CSS Editor, Frontend(Script) และ Backend ให้ทำ Label ด้านหน้าของ Comment เพื่อแจ้งให้คนในทีมทราบด้วยว่าแก้ไขอะไรไป
 * Comment ให้เขียนด้วย Lowercase ทั้งหมด

@@ -75,14 +75,17 @@
   -->
 </head>
 <body>
+  <div>*** Check > Reset Default CSS Prorperties of HTML tags ***</div>
   <h1>Heading 1</h1>
   <h2>Heading 2</h2>
   <h3>Heading 3</h3>
   <h4>Heading 4</h4>
   <h5>Heading 5</h5>
   <h6>Heading 6</h6>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem commodi facilis minus ipsum molestias vero molestiae, reiciendis non aliquid perferendis voluptates nihil aliquam dolores excepturi doloremque fugiat cumque. Facere, aspernatur.</p>
+  <p>Paragraph</p>
+  <span>Span</span>
   <a href="#" target="_blank">Link</a>
+  <button type="button">Button</button>
   <div>Div</div>
   <ul>
     <li>Unlist item</li>
@@ -94,46 +97,26 @@
     <li>Orderlist item</li>
     <li>Orderlist item</li>
   </ol>
-  <button class="button is-size-sm" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Small size</span>
-    </span>
-  </button>
-  <button class="button" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Default size</span>
-    </span>
-  </button>
-  <button class="button is-size-lg" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Large size</span>
-    </span>
-  </button>
-  <button class="button is-flexible" type="button" onclick="">
-    <span class="button-body">
-      <span class="button-text">Default size</span>
-    </span>
-  </button>
-  <div class="bootstrap">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="media-16-9">
-            <img src="./assets/images/contents/home-banner.jpg" alt="Banner">
-          </div>
-          <p class="text-primary-body-xs">Image ratio 16:9</p>
-        </div>
-        <div class="col-sm-6">
-          <div class="media-4-3 is-full-height">
-            <img src="./assets/images/contents/home-banner.jpg" alt="Banner">
-          </div>
-          <p class="text-primary-body-xs">Image ratio 4:3</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <form action="">
+    <fieldset>
+      <legend>Form section: 1</legend>
+      <input type="text">
+      <textarea name="" id="" rows="5"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Form section: 2</legend>
+      <input type="checkbox" name="" id="">
+      <input type="radio" name="" id="">
+      <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </fieldset>
+  </form>
 
   <script src="./assets/js/jquery/jquery.min.js"></script>
+  <script src="./assets/js/jquery-migrate/jquery-migrate-3.0.1.min.js"></script>
   <script src="./assets/js/is_js/is.min.js"></script>
   <script src="main.js"></script>
 </body>

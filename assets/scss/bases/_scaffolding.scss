@@ -83,6 +83,12 @@ textarea {
   line-height: inherit;
 }
 
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
 input {
   outline: none;
 }
