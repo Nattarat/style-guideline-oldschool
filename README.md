@@ -41,6 +41,8 @@
   - [Setting-up](#calibrate-font-setting-up)
 * [How to using other CSS framework in project](#how-to-using-other-css-framework-in-project)
   - [Setting-up](#vendor-setting-up)
+* [How to overwrite javascript vendor style in project](#how-to-overwrite-javascript-vendor-style-in-project)
+  - [Setting-up](#javascript-vendor-setting-up)
 * [Git comment](#git-comment)
 * [VSCode extensions and settings](#vscode-extensions-and-settings)
 * [Start project by browser sync](#start-project-by-browser-sync)
