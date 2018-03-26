@@ -10,5 +10,19 @@
 */
 
 .js-slick {
-
+  // Bullet pagination
+  // ------------------------------------------------
+  .slick-dots {
+    li {
+      // Active
+      &.slick-active {
+        button {
+          &:before {
+            opacity: 1;
+            color: $color-red-1;
+          }
+        }
+      }
+    }
+  }
 }

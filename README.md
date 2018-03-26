@@ -1614,12 +1614,8 @@ References: https://www.designil.com/button-design-ui-ux.html
         // Classes from Bootstrap
       }
       ```
-3. ที่ main.scss ให้ import ไฟล์ไว้ลำดับแรกสุด เพื่อในอนาคตอาจจะมีความจำเป็นต้อง Overwrite class ของ CSS Framework ที่นำมาใช้
+3. ที่ main.scss ให้ import ไฟล์ไว้หลัง Bases และก่อน Components กับ Collections เพื่อในอนาคตอาจจะมีความจำเป็นต้อง Overwrite class ของ CSS Framework ที่นำมาใช้ภายใน Components หรือ Collections
 ```
-// Vendors
-// ============================================================
-@import 'vendors/bootstrap';
-
 // Helpers > Mixins
 // ============================================================
 @import '...'
@@ -1631,6 +1627,10 @@ References: https://www.designil.com/button-design-ui-ux.html
 // Helpers > Utilities
 // ============================================================
 @import '...'
+
+// Vendors
+// ============================================================
+@import 'vendors/bootstrap';
 
 // Components
 // ============================================================
@@ -1661,9 +1661,60 @@ References: https://www.designil.com/button-design-ui-ux.html
       - ชื่อ Vendor และตัวเลข Version
       - GitHub Link ของ Vendor
       ```
-      * Bootstrap v4.0.0
-        - Grids (https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap-grid.css)
+      * Slick v1.8.1
+        - https://github.com/kenwheeler/slick/
       ```
+    * สร้าง Class wrapper เป็นชื่อของ Javascript vendor นั้นๆ โดยมี Prefix คือ js- นำหน้าชื่อไว้ เพื่อบ่งบอกว่าโครงสร้างส่วนนี้ทำงานร่วมกับ Javascript
+    * จุดประสงค์อีกหนึ่งอย่างของการสร้าง Class wrapper ครอบ Class ของ Javascript vendor ก็เพื่อให้ได้มาซึ่งการ Overwrite CSS Properties ของ Class นั้นๆ
+      ```
+      .js-slick {
+        // Bullet pagination
+        // ------------------------------------------------
+        .slick-dots {
+          li {
+            // Active
+            &.slick-active {
+              button {
+                &:before {
+                  opacity: 1;
+                  color: $color-red-1;
+                }
+              }
+            }
+          }
+        }
+      }
+      ```
+3. ที่ main.scss ให้ import ไฟล์ไว้หลัง Bases และก่อน Components กับ Collections เพื่อในอนาคตอาจจะมีความจำเป็นต้อง Overwrite class ของ Javascript vendor ที่นำมาใช้ภายใน Components หรือ Collections
+```
+// Helpers > Mixins
+// ============================================================
+@import '...'
+
+// Bases
+// ============================================================
+@import '...'
+
+// Helpers > Utilities
+// ============================================================
+@import '...'
+
+// Vendors
+// ============================================================
+@import 'vendors/slick';
+
+// Components
+// ============================================================
+@import '...'
+
+// Layouts
+// ============================================================
+@import 'layouts/topbar';
+
+// Pages
+// ============================================================
+@import '...'
+```
 
 ## Git comment
 * ในกรณีทำโปรเจคร่วมกับทีมที่ประกอบด้วย HTML/CSS Editor, Frontend(Script) และ Backend ให้ทำ Label ด้านหน้าของ Comment เพื่อแจ้งให้คนในทีมทราบด้วยว่าแก้ไขอะไรไป
