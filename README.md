@@ -556,13 +556,18 @@ icon-social-facebook-square@2x.png
 ## Architecture
 * โครงสร้างของ Style assets แบ่งออกเป็น 5 ส่วน ได้แก่
   * css
+  * documents
   * fonts
   * images
   * js
   * scss
+  * videos
 
 ### css
 * เก็บไฟล์ CSS ที่เขียนขึ้นมาเอง และไฟล์ CSS ที่ไม่สามารถติดตั้งผ่านทาง Package manager eg. npm, yarn ได้(ต้องดาวน์โหลดมาติดตั้งเอง)
+
+### documents
+* เก็บไฟล์เอกสาร เช่น PDF, Microsoft Word/Excel/Powerpoint เป็นต้น เพื่อใช้สำหรับดาวน์โหลด
 
 ### fonts
 * เก็บไฟล์ font ที่นำมาใช้ในเว็บไซต์ โดยภายในแบ่งเป็น folder ตาม font family
@@ -621,7 +626,7 @@ icon-social-facebook-square@2x.png
   * main: ไฟล์รวมสไตล์ทั้งหมดสำหรับ Compile มาเป็น main.css เพื่อนำไปใช้ในเว็บไซต์
 
 ### videos
-* เก็บไฟล์ videos
+* เก็บไฟล์ videos เช่น mp4 เป็นต้น
 
 ## Responsive web design and Breakpoints
 * แบ่ง Breakpoints เป็นช่วงตามประเภท Devices โดยการแบ่งช่วงของ Mobile/Tablet อ้างอิง Devices ของ Apple/Sumsung เป็นหลักและ Laptop/Desktop อ้างอิง Monitor statistics แต่ละปีเป็นหลัก
