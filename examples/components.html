@@ -24,24 +24,24 @@
   <!-- Disable automatic detection and formatting of possible phone numbers -->
   <meta name="format-detection" content="telephone=no">
   <!-- Favicons: For IE 9, IE 10 -->
-  <link rel="icon" href="./assets/images/favicons/favicon.ico" sizes="32x32" type="image/ico">
+  <link rel="icon" href="./../assets/images/favicons/favicon.ico" sizes="32x32" type="image/ico">
   <!-- Favicons: IE 11, Chrome, Firefox, Safari, Opera -->
-  <link rel="icon" sizes="48x48" type="image/png" href="./assets/images/favicons/favicon@xs.png">
-  <link rel="icon" sizes="96x96" type="image/png" href="./assets/images/favicons/favicon@sm.png">
-  <link rel="icon" sizes="144x144" type="image/png" href="./assets/images/favicons/favicon@md.png">
-  <link rel="icon" sizes="192x192" type="image/png" href="./assets/images/favicons/favicon@lg.png">
+  <link rel="icon" sizes="48x48" type="image/png" href="./../assets/images/favicons/favicon@xs.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="./../assets/images/favicons/favicon@sm.png">
+  <link rel="icon" sizes="144x144" type="image/png" href="./../assets/images/favicons/favicon@md.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="./../assets/images/favicons/favicon@lg.png">
   <!-- Favicons: Apple/Safari -->
-  <link rel="apple-touch-icon" href="./assets/images/favicons/touch-icon-iphone.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/images/favicons/touch-icon-ipad.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="./assets/images/favicons/touch-icon-iphone-retina.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/favicons/touch-icon-ipad-retina.png">
+  <link rel="apple-touch-icon" href="./../assets/images/favicons/touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./../assets/images/favicons/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./../assets/images/favicons/touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./../assets/images/favicons/touch-icon-ipad-retina.png">
   <!-- Favicons: Windows home screen/phone -->
   <meta name="msapplication-square70x70logo" content="./assets/images/favicons/ms-application-sm.png">
   <meta name="msapplication-square150x150logo" content="./assets/images/favicons/ms-application-md.png">
   <meta name="msapplication-square310x310logo" content="./assets/images/favicons/ms-application-lg.png">
   <meta name="msapplication-wide310x150logo" content="./assets/images/favicons/ms-application-wide.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="./assets/css/main.min.css">
+  <link rel="stylesheet" href="./../assets/css/main.min.css">
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -80,51 +80,63 @@
   <meta itemprop="description" content="Description_Detail_less_than_200_characters"/>
   <meta itemprop="image" content="https://example.com/GooglePlus_Cover_Timeline_Image.jpg"/>
   -->
+
+  <style>
+    .partition-line {
+      position: relative;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-top: 0;
+    }
+
+    .partition-line:before {
+      content: ' ';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 1px;
+      background-color: #EEEEEE;
+    }
+  </style>
 </head>
 <body>
-  <div>*** Check > Reset Default CSS Prorperties of HTML tags ***</div>
-  <h1>Heading 1</h1>
-  <h2>Heading 2</h2>
-  <h3>Heading 3</h3>
-  <h4>Heading 4</h4>
-  <h5>Heading 5</h5>
-  <h6>Heading 6</h6>
-  <p>Paragraph</p>
-  <span>Span</span>
-  <a href="#" target="_blank">Link</a>
-  <button type="button">Button</button>
-  <div>Div</div>
-  <ul>
-    <li>Unlist item</li>
-    <li>Unlist item</li>
-    <li>Unlist item</li>
-  </ul>
-  <ol>
-    <li>Orderlist item</li>
-    <li>Orderlist item</li>
-    <li>Orderlist item</li>
-  </ol>
-  <form action="">
-    <fieldset>
-      <legend>Form section: 1</legend>
-      <input type="text">
-      <textarea name="" id="" rows="5"></textarea>
-    </fieldset>
-    <fieldset>
-      <legend>Form section: 2</legend>
-      <input type="checkbox" name="" id="">
-      <input type="radio" name="" id="">
-      <select name="" id="">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-    </fieldset>
-  </form>
+  <button class="button is-size-sm" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Small size</span>
+    </span>
+  </button>
+  <button class="button" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Default size</span>
+    </span>
+  </button>
+  <button class="button is-size-lg" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Large size</span>
+    </span>
+  </button>
+  <hr class="partition-line">
+  <button class="button is-flexible" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Flexible</span>
+    </span>
+  </button>
+  <hr class="partition-line">
+  <button class="button is-fluid" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Fluid</span>
+    </span>
+  </button>
+  <hr class="partition-line">
+  <button class="button-primary" type="button" onclick="">
+    <span class="button-body">
+      <span class="button-text">Primary button</span>
+    </span>
+  </button>
 
-  <script src="./assets/js/jquery/jquery.min.js"></script>
-  <script src="./assets/js/jquery-migrate/jquery-migrate-3.0.1.min.js"></script>
-  <script src="./assets/js/is_js/is.min.js"></script>
-  <script src="main.js"></script>
+  <script src="./../assets/js/jquery/jquery.min.js"></script>
+  <script src="./../assets/js/jquery-migrate/jquery-migrate-3.0.1.min.js"></script>
+  <script src="./../assets/js/is_js/is.min.js"></script>
+  <script src="./../main.js"></script>
 </body>
 </html>

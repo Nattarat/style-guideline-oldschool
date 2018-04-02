@@ -24,24 +24,24 @@
   <!-- Disable automatic detection and formatting of possible phone numbers -->
   <meta name="format-detection" content="telephone=no">
   <!-- Favicons: For IE 9, IE 10 -->
-  <link rel="icon" href="./assets/images/favicons/favicon.ico" sizes="32x32" type="image/ico">
+  <link rel="icon" href="./../assets/images/favicons/favicon.ico" sizes="32x32" type="image/ico">
   <!-- Favicons: IE 11, Chrome, Firefox, Safari, Opera -->
-  <link rel="icon" sizes="48x48" type="image/png" href="./assets/images/favicons/favicon@xs.png">
-  <link rel="icon" sizes="96x96" type="image/png" href="./assets/images/favicons/favicon@sm.png">
-  <link rel="icon" sizes="144x144" type="image/png" href="./assets/images/favicons/favicon@md.png">
-  <link rel="icon" sizes="192x192" type="image/png" href="./assets/images/favicons/favicon@lg.png">
+  <link rel="icon" sizes="48x48" type="image/png" href="./../assets/images/favicons/favicon@xs.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="./../assets/images/favicons/favicon@sm.png">
+  <link rel="icon" sizes="144x144" type="image/png" href="./../assets/images/favicons/favicon@md.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="./../assets/images/favicons/favicon@lg.png">
   <!-- Favicons: Apple/Safari -->
-  <link rel="apple-touch-icon" href="./assets/images/favicons/touch-icon-iphone.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/images/favicons/touch-icon-ipad.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="./assets/images/favicons/touch-icon-iphone-retina.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/favicons/touch-icon-ipad-retina.png">
+  <link rel="apple-touch-icon" href="./../assets/images/favicons/touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./../assets/images/favicons/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./../assets/images/favicons/touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./../assets/images/favicons/touch-icon-ipad-retina.png">
   <!-- Favicons: Windows home screen/phone -->
   <meta name="msapplication-square70x70logo" content="./assets/images/favicons/ms-application-sm.png">
   <meta name="msapplication-square150x150logo" content="./assets/images/favicons/ms-application-md.png">
   <meta name="msapplication-square310x310logo" content="./assets/images/favicons/ms-application-lg.png">
   <meta name="msapplication-wide310x150logo" content="./assets/images/favicons/ms-application-wide.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="./assets/css/main.min.css">
+  <link rel="stylesheet" href="./../assets/css/main.min.css">
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -80,74 +80,37 @@
   <meta itemprop="description" content="Description_Detail_less_than_200_characters"/>
   <meta itemprop="image" content="https://example.com/GooglePlus_Cover_Timeline_Image.jpg"/>
   -->
+
+  <style>
+    .container-compare {
+      display: flex;
+      width: 100%;
+    }
+
+    .container-compare-inner {
+      width: 50%;
+    }
+
+    iframe {
+      overflow: auto;
+      width: 100%;
+      height: calc(100vh - 8px);
+    }
+  </style>
 </head>
 <body>
-  <div class="bootstrap">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-image">
-                <div class="media-16-9">
-                  <img src="./assets/images/contents/home-banner.jpg" alt="Cover">
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="card-title">
-                <h2>Japanese Nadeshiko</h2>
-              </div>
-              <div class="card-description">
-                <p>a japanese term used to praise the unadorned, clean beauty of a japanese woman</p>
-              </div>
-            </div>
-            <div class="card-footer">
-              <div class="card-button">
-                <a class="button-primary" href="#" target="_blank">
-                  <span class="button-body">
-                    <span class="button-text">See detail</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card-primary">
-            <div class="card-header">
-              <div class="card-image">
-                <div class="media-16-9">
-                  <img src="./assets/images/contents/home-banner.jpg" alt="Cover">
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="card-title">
-                <h2>Japanese Nadeshiko</h2>
-              </div>
-              <div class="card-description">
-                <p>a japanese term used to praise the unadorned, clean beauty of a japanese woman</p>
-              </div>
-            </div>
-            <div class="card-footer">
-              <div class="card-button">
-                <a class="button" href="#" target="_blank">
-                  <span class="button-body">
-                    <span class="button-text">See detail</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="container-compare">
+    <div class="container-compare-inner">
+      <iframe src="http://localhost:3000/examples/typography.html"></iframe>
+    </div>
+    <div class="container-compare-inner">
+      <iframe src="http://localhost:3000/examples/typography-en.html"></iframe>
     </div>
   </div>
 
-  <script src="./assets/js/jquery/jquery.min.js"></script>
-  <script src="./assets/js/jquery-migrate/jquery-migrate-3.0.1.min.js"></script>
-  <script src="./assets/js/is_js/is.min.js"></script>
-  <script src="main.js"></script>
+  <script src="./../assets/js/jquery/jquery.min.js"></script>
+  <script src="./../assets/js/jquery-migrate/jquery-migrate-3.0.1.min.js"></script>
+  <script src="./../assets/js/is_js/is.min.js"></script>
+  <script src="./../main.js"></script>
 </body>
 </html>
