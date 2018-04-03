@@ -4,6 +4,7 @@
 * Guideline นี้จะมีลักษณะที่เขียน Style แยกออกมาเป็นไฟล์เดียวและ include เข้าไปที่ head โดยโปรเจคที่นำ Guideline นี้ไปใช้งาน ได้แก่ ASP.net, Magento, Symphony, Wordpress, Angular 1, None frontend framework เป็นต้น
 
 ## Table of contents
+* [Browser support](#browser-support)
 * [Syntax and Formatting](#syntax-and-formatting)
   - [Strings](#strings)
   - [Numbers](#numbers)
@@ -47,6 +48,13 @@
 * [VSCode extensions and settings](#vscode-extensions-and-settings)
 * [Start project by browser sync](#start-project-by-browser-sync)
 * [CSS Processsor compile program](#css-processsor-compile-program)
+
+## Browser support
+| IE | Edge | Firefox | Chrome | Safari | Safari & Chrome iOS | Chrome Android |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 11 | 16+ | 59+ | 65+ | 11+ | 11.2+ | 11.2+ | 64+ |
+
+หมายเหตุ: การ Support อ้างอิงจาก [CSS Flexible Box Layout Module](https://caniuse.com/#search=flex) เป็นหลัก เนื่องจากเป็น Properties หลักในการจัดการ Layout ของเว็บไซต์
 
 ## Syntax and Formatting
 * ใช้ 2 spaces indents (ไม่ใช้ tabs)
