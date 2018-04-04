@@ -16,22 +16,22 @@
 
 // Medium
 @font-face {
-  font-family: Maitree-Medium;
-  src: url('#{$path-file-fonts}/maitree/maitree-medium.eot');
-  src: url('#{$path-file-fonts}/maitree/maitree-medium.eot') format('embedded-opentype'),
-       url('#{$path-file-fonts}/maitree/maitree-medium.woff') format('woff'),
-       url('#{$path-file-fonts}/maitree/maitree-medium.ttf') format('truetype');
+  font-family: $font-family-primary-medium;
+  src: url('#{$path-file-fonts-primary-medium}.eot');
+  src: url('#{$path-file-fonts-primary-medium}.eot') format('embedded-opentype'),
+       url('#{$path-file-fonts-primary-medium}.woff') format('woff'),
+       url('#{$path-file-fonts-primary-medium}.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 // Bold
 @font-face {
-  font-family: Maitree-Bold;
-  src: url('#{$path-file-fonts}/maitree/maitree-bold.eot');
-  src: url('#{$path-file-fonts}/maitree/maitree-bold.eot') format('embedded-opentype'),
-       url('#{$path-file-fonts}/maitree/maitree-bold.woff') format('woff'),
-       url('#{$path-file-fonts}/maitree/maitree-bold.ttf') format('truetype');
+  font-family: $font-family-primary-bold;
+  src: url('#{$path-file-fonts-primary-bold}.eot');
+  src: url('#{$path-file-fonts-primary-bold}.eot') format('embedded-opentype'),
+       url('#{$path-file-fonts-primary-bold}.woff') format('woff'),
+       url('#{$path-file-fonts-primary-bold}.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
