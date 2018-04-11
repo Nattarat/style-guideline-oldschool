@@ -1793,6 +1793,9 @@ git commit -m "html/css: edit about page | content: add facebook icon | js: add 
     },
     "sublimeTextKeymap.promptV3Features": true,
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "[javascriptreact]": {
+      "editor.foldingStrategy": "indentation"
+    },
   }
   ```
 
